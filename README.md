@@ -19,4 +19,4 @@
 
 ## 📫 Connect with Me
 
-- [LinkedIn](https://www.linkedin.com/in/arnavsingh7)
+- [LinkedIn](https://www.linkedin.com/in/arnav-singh7)
