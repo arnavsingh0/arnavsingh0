@@ -7,7 +7,9 @@
 - 🎓 Junior at Dartmouth College
 - 🔭 Working on research
 - 🛫 I like to travel
-- ⚡ Fun Fact: I miss the Concorde, and Mozart's Lacrimosa = Beethoven 7th
+- ⚡ Random Quote:
+<!--STARTS_HERE_QUOTE_README-->
+<!--ENDS_HERE_QUOTE_README-->
 
 ## 🛠 Skills
 
