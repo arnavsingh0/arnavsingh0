@@ -8,7 +8,7 @@
 - 🔭 Working on research
 - 🛫 I like to travel
 - ⚡ Random Quote:<!--STARTS_HERE_QUOTE_README-->
-<i>❝There is a programming language called INTERCAL which has keywords like IGNORE, PLEASE , FORGET. If you don’t use PLEASE enough times while coding, Compiler rejects the code.❞</i>
+<i>❝“If you don’t handle [exceptions], we shut your application down.  That dramatically increases the reliability of the system.”— Anders Hejlsberg   ❞</i>
 <!--ENDS_HERE_QUOTE_README-->
 
 ## 🛠 Skills (None)
