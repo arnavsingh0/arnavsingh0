@@ -8,7 +8,7 @@
 - 🔭 Working on research
 - 🛫 I like to travel
 - ⚡ Random Quote:<!--STARTS_HERE_QUOTE_README-->
-<i>❝“Before software should be reusable, it should be usable.”— Ralph Johnson  ❞</i>
+<i>❝“It is easier to change the specification to fit the program than vice versa.”— Alan Perlis   ❞</i>
 <!--ENDS_HERE_QUOTE_README-->
 
 ## 🛠 Skills (None)
