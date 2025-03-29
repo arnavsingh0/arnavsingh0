@@ -8,7 +8,7 @@
 - 🔭 Working on research
 - 🛫 I like to travel
 - ⚡ Random Quote:<!--STARTS_HERE_QUOTE_README-->
-<i>❝Approximately 70% of virus writers are said to work under contract for organized crime syndicates.❞</i>
+<i>❝“A computer once beat me at chess, but it was no match for me at kick boxing.”— Emo Philips  ❞</i>
 <!--ENDS_HERE_QUOTE_README-->
 
 ## 🛠 Skills (None)
