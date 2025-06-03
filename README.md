@@ -8,7 +8,7 @@
 - 🔭 Working on research
 - 🛫 I like to travel
 - ⚡ Random Quote:<!--STARTS_HERE_QUOTE_README-->
-<i>❝“If you think your users are idiots, only idiots will use it.”— Linus Torvalds   ❞</i>
+<i>❝During IBM Watson’s Jeopardy Game, it stored all 15 terabytes of its knowledge in RAM, including every page of Wikipedia in existence.❞</i>
 <!--ENDS_HERE_QUOTE_README-->
 
 ## 🛠 Skills (None)
