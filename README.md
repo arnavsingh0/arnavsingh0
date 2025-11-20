@@ -8,7 +8,7 @@
 - 🔭 Working on research
 - 🛫 I like to travel
 - ⚡ Random Quote:<!--STARTS_HERE_QUOTE_README-->
-<i>❝“Passwords are like underwear: you don’t let people see it, you should change it very often, and you shouldn’t share it with strangers.”— Chris Pirillo   ❞</i>
+<i>❝“The world is one big data problem.”— Andrew McAfee❞</i>
 <!--ENDS_HERE_QUOTE_README-->
 
 ## 🛠 Skills (None)
