@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="850" height="400">
+  <rect width="100%" height="100%" fill="#0d1117" rx="15" ry="15"/>
+  <style>
+    .text { font-family: "Courier New", Courier, monospace; font-size: 14px; fill: #c9d1d9; white-space: pre; }
+    .highlight { fill: #58a6ff; }
+    .additions { fill: #3fb950; }
+    .deletions { fill: #f85149; }
+    .title { font-weight: bold; fill: #58a6ff; }
+  </style>
+
+  <text x="30" y="50" class="text">
+    <tspan x="30" dy="1.2em">       .---.</tspan>
+    <tspan x="30" dy="1.2em">      /_____\</tspan>
+    <tspan x="30" dy="1.2em">      ( •_• )</tspan>
+    <tspan x="30" dy="1.2em">   ___/|   |\___</tspan>
+    <tspan x="30" dy="1.2em">  /|  ||   ||  |\</tspan>
+    <tspan x="30" dy="1.2em"> |_|  ||___||  |_|</tspan>
+    <tspan x="30" dy="1.2em">      /     \</tspan>
+    <tspan x="30" dy="1.2em">    _|_     _|_</tspan>
+    <tspan x="30" dy="1.2em">   /   \   /   \</tspan>
+    <tspan x="30" dy="1.2em">   \___/   \___/</tspan>
+  </text>
+
+  <text x="30" y="240" class="text highlight">.  .  .  .  .  .  .  .  .</text>
+
+  <text x="320" y="40" class="text">
+    <tspan x="320" dy="1.2em" class="title">arnav@perseverance ------------------------------------</tspan>
+    
+    <tspan x="320" dy="1.6em">. Status: .................... Active, Mission-Critical</tspan>
+    <tspan x="320" dy="1.2em">. Primary Target: ........ NASA SMEX $180M Prop. CINEMA</tspan>
+    <tspan x="320" dy="1.2em">. Affiliation: ..... Dartmouth College (Millan Lab Res)</tspan>
+    
+    <tspan x="320" dy="1.6em" class="title">. Stack -----------------------------------------------</tspan>
+    <tspan x="320" dy="1.2em">. Languages.Dev: .................. Python, C, C++, Java</tspan>
+    <tspan x="320" dy="1.2em">. Frameworks.Core: ....................... React, Node.js</tspan>
+    
+    <tspan x="320" dy="1.6em" class="title">. Network ---------------------------------------------</tspan>
+    <tspan x="320" dy="1.2em">. Contact.LinkedIn: ...................... arnav-singh7</tspan>
+    <tspan x="320" dy="1.2em">. Contact.Portfolio: ............. arnavsingh0.github.io</tspan>
+
+    <tspan x="320" dy="1.6em" class="title">. Telemetry -------------------------------------------</tspan>
+    <tspan x="320" dy="1.2em">. Repos: <tspan id="repo_data_dots">.....</tspan> <tspan id="repo_data" class="highlight">0</tspan> | Stars: <tspan id="star_data_dots">.....</tspan> <tspan id="star_data" class="highlight">0</tspan></tspan>
+    <tspan x="320" dy="1.2em">. Commits: <tspan id="commit_data_dots">...</tspan> <tspan id="commit_data" class="highlight">0</tspan> | Followers: <tspan id="follower_data_dots">.</tspan> <tspan id="follower_data" class="highlight">0</tspan></tspan>
+    <tspan x="320" dy="1.2em">. LOC Written: <tspan id="loc_data" class="highlight">0</tspan> ( <tspan id="loc_add" class="additions">0++</tspan>, <tspan id="loc_del" class="deletions">0--</tspan> )</tspan>
+  </text>
+</svg>
