@@ -1,45 +1,35 @@
-# Hello there! 👋 I'm Arnav Singh
+# arnav singh
 
-![Profile Views](https://komarev.com/ghpvc/?username=arnavsingh&color=blue)
+cs & physics @ dartmouth. 
 
-## 🚀 About Me
-
-- 🎓 Junior at Dartmouth College
-- 🔭 Working on research
-- 🛫 I like to travel
-- ⚡ Random Quote:<!--STARTS_HERE_QUOTE_README-->
+<!--STARTS_HERE_QUOTE_README-->
 <i>❝“The goal is to turn data into information, and information into insight.”— Carly Fiorina❞</i>
 <!--ENDS_HERE_QUOTE_README-->
+### / log
+- **currently**: pushing research for the $180M NASA CINEMA mission @ Millan Lab.
+- **previously**: swe intern @ PlayStation (X-Ray project).
+- **shipping**: Nuggets (high-concurrency C game server) & Tactile Trials (SummerJam haptic engine).
+- **afk**: catching runs on the mountain or playing e4 on chess.com.
 
-## 🛠 Skills (None)
+### / stack
+Python • C • C++ • Java • React • PostgreSQL • AWS
 
-- **Languages**: Python, Java, C++
-- **Frameworks**: React
-- **Tools**: Git
+### / telemetry
 
-## 🌟 Projects
-
-## 📫 Connect with Me
-
-- [LinkedIn](https://www.linkedin.com/in/arnav-singh7)
-
-<p align = "center">
-<a href="https://pytorch.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg" alt="pytorch" width="40" height="40"/> </a> 
-<a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="pandas" width="40" height="40"/> </a> 
-<a href="https://scikit-learn.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/> </a>
-<a href="https://www.tensorflow.org" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="tensorflow" width="40" height="40"/> </a>
-<a href="https://seaborn.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="seaborn" width="40" height="40"/> </a> 
-<a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="bash" width="40" height="40"/> </a> 
-  <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> 
-  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> 
-  <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> 
-  <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a>
-<a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/> </a> 
-<a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> 
-  <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> 
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=arnavsingh0&bg_color=0d1117&color=58a6ff&line=58a6ff&point=ffffff&area=true&hide_border=true" width="100%" />
 </p>
-<p align = "center">
-<a href="https://github.com/anuraghazra/convoychat">
-  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=arnavsingh0&layout=compact&langs_count=8&card_width=320&theme=vision-friendly-dark" />
-</a>
+
+<p align="center">
+  <a href="https://github.com/anuraghazra/github-readme-stats">
+    <img height="180" src="https://github-readme-stats.vercel.app/api/top-langs?username=arnavsingh0&layout=compact&langs_count=6&card_width=320&theme=dark&hide_border=true" />
+  </a>
+  <a href="https://github.com/balimac/chess-stats-readme">
+    <img height="180" src="https://chess-stats-readme.vercel.app/api?name=TheBeastLegend10&theme=dark&hide_border=true" />
+  </a>
+</p>
+
+<br>
+
+[linkedin](https://www.linkedin.com/in/arnav-singh7) • [repositories](https://github.com/arnavsingh0?tab=repositories)
 </p>
