@@ -3,7 +3,7 @@
 physics & cs @ dartmouth. 
 
 <!--STARTS_HERE_QUOTE_README-->
-<i>❝Sony released a kit that allows PS2s (Linux for PlayStation 2) to be used as a personal computer.❞</i>
+<i>❝China has the highest number of internet users in the whole world with over 746 million active users.❞</i>
 <!--ENDS_HERE_QUOTE_README-->
 Python • C • C++ • Java • React • PostgreSQL • AWS
 
