@@ -1,9 +1,7 @@
 import datetime
-from dateutil import relativedelta
 import requests
 import os
 from lxml import etree
-import time
 import hashlib
 
 HEADERS = {'authorization': 'token '+ os.environ['ACCESS_TOKEN']}
@@ -16,7 +14,7 @@ def simple_request(func_name, query, variables):
         return request
     raise Exception(func_name, ' has failed with a', request.status_code, request.text, QUERY_COUNT)
 
-def graph_repos_stars(count_type, owner_affiliation, cursor=None, add_loc=0, del_loc=0):
+def graph_repos_stars(count_type, owner_affiliation, cursor=None, stars_acc=0):
     query_count('graph_repos_stars')
     query = '''
     query ($owner_affiliation: [RepositoryAffiliation], $login: String!, $cursor: String) {
@@ -42,11 +40,16 @@ def graph_repos_stars(count_type, owner_affiliation, cursor=None, add_loc=0, del
     }'''
     variables = {'owner_affiliation': owner_affiliation, 'login': USER_NAME, 'cursor': cursor}
     request = simple_request(graph_repos_stars.__name__, query, variables)
-    if request.status_code == 200:
-        if count_type == 'repos':
-            return request.json()['data']['user']['repositories']['totalCount']
-        elif count_type == 'stars':
-            return sum(node['node']['stargazers']['totalCount'] for node in request.json()['data']['user']['repositories']['edges'])
+    data = request.json()['data']['user']['repositories']
+    if count_type == 'repos':
+        return data['totalCount']
+    if count_type == 'stars':
+        page_stars = sum(node['node']['stargazers']['totalCount'] for node in data['edges'])
+        stars_acc += page_stars
+        if data['pageInfo']['hasNextPage']:
+            return graph_repos_stars(count_type, owner_affiliation, data['pageInfo']['endCursor'], stars_acc)
+        return stars_acc
+    raise ValueError('count_type must be "repos" or "stars"')
 
 def recursive_loc(owner, repo_name, data, cache_comment, addition_total=0, deletion_total=0, my_commits=0, cursor=None):
     query_count('recursive_loc')
@@ -88,10 +91,11 @@ def recursive_loc(owner, repo_name, data, cache_comment, addition_total=0, delet
         if request.json()['data']['repository']['defaultBranchRef'] != None:
             history = request.json()['data']['repository']['defaultBranchRef']['target']['history']
             for node in history['edges']:
-                if node['node']['author']['user'] is not None and node['node']['author']['user']['id'] == OWNER_ID['id']:
+                author_user = node['node'].get('author') and node['node']['author'].get('user')
+                if author_user is not None and author_user.get('id') == OWNER_ID['id']:
                     my_commits += 1
-                    addition_total += node['node']['additions']
-                    deletion_total += node['node']['deletions']
+                    addition_total += node['node'].get('additions') or 0
+                    deletion_total += node['node'].get('deletions') or 0
 
             if history['edges'] == [] or not history['pageInfo']['hasNextPage']:
                 return addition_total, deletion_total, my_commits
@@ -102,7 +106,9 @@ def recursive_loc(owner, repo_name, data, cache_comment, addition_total=0, delet
         raise Exception('Too many requests. Hit anti-abuse limit.')
     raise Exception('recursive_loc() failed', request.status_code, request.text, QUERY_COUNT)
 
-def loc_query(owner_affiliation, comment_size=0, force_cache=False, cursor=None, edges=[]):
+def loc_query(owner_affiliation, comment_size=0, force_cache=False, cursor=None, edges=None):
+    if edges is None:
+        edges = []
     query_count('loc_query')
     query = '''
     query ($owner_affiliation: [RepositoryAffiliation], $login: String!, $cursor: String) {
@@ -192,13 +198,21 @@ def force_close_file(data, cache_comment):
         f.writelines(cache_comment)
         f.writelines(data)
 
-def svg_overwrite(filename, commit_data, star_data, repo_data, follower_data, loc_data):
+def calculate_sols():
+    landing = datetime.datetime(2021, 2, 18, 20, 55, 0)
+    now = datetime.datetime.utcnow()
+    sol_seconds = 88775.244
+    return int((now - landing).total_seconds() / sol_seconds)
+
+def svg_overwrite(filename, commit_data, star_data, repo_data, contributed_data, follower_data, sol_data, loc_data):
     tree = etree.parse(filename)
     root = tree.getroot()
     justify_format(root, 'commit_data', commit_data)
     justify_format(root, 'star_data', star_data)
     justify_format(root, 'repo_data', repo_data)
+    justify_format(root, 'contributed_data', contributed_data)
     justify_format(root, 'follower_data', follower_data)
+    justify_format(root, 'sol_data', sol_data)
     justify_format(root, 'loc_data', loc_data[2])
     justify_format(root, 'loc_add', f"{loc_data[0]}++")
     justify_format(root, 'loc_del', f"{loc_data[1]}--")
@@ -253,17 +267,19 @@ def query_count(funct_id):
     QUERY_COUNT[funct_id] += 1
 
 if __name__ == '__main__':
-    user_data, user_time = user_getter(USER_NAME), 0
-    OWNER_ID, acc_date = user_data[0], user_data[1]
-    
+    OWNER_ID, acc_date = user_getter(USER_NAME)
+
     total_loc = loc_query(['OWNER', 'COLLABORATOR', 'ORGANIZATION_MEMBER'], 7)
     commit_data = commit_counter(7)
     star_data = graph_repos_stars('stars', ['OWNER'])
     repo_data = graph_repos_stars('repos', ['OWNER'])
+    contributed_data = graph_repos_stars('repos', ['COLLABORATOR', 'ORGANIZATION_MEMBER'])
     follower_data = follower_getter(USER_NAME)
+    sol_data = calculate_sols()
 
-    for index in range(len(total_loc)-1): total_loc[index] = '{:,}'.format(total_loc[index])
-    
-    # Overwrite the SVG
-    svg_overwrite('dark_mode.svg', commit_data, star_data, repo_data, follower_data, total_loc[:-1])
+    for index in range(len(total_loc)-1):
+        total_loc[index] = '{:,}'.format(total_loc[index])
+
+    svg_overwrite('dark_mode.svg', commit_data, star_data, repo_data,
+                  contributed_data, follower_data, sol_data, total_loc[:-1])
     print("SVG Successfully Updated.")

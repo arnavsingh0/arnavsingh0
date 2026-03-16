@@ -1,46 +1,107 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="850" height="400">
-  <rect width="100%" height="100%" fill="#0d1117" rx="15" ry="15"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="490" viewBox="0 0 960 490">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="50%" style="stop-color:#161b22"/>
+      <stop offset="100%" style="stop-color:#0d1117"/>
+    </linearGradient>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#21262d" stroke-width="0.3" opacity="0.4"/>
+    </pattern>
+    <radialGradient id="earthG" cx="38%" cy="32%" r="55%">
+      <stop offset="0%" style="stop-color:#4488cc"/>
+      <stop offset="100%" style="stop-color:#1a3355"/>
+    </radialGradient>
+  </defs>
+
   <style>
-    .text { font-family: "Courier New", Courier, monospace; font-size: 14px; fill: #c9d1d9; white-space: pre; }
-    .highlight { fill: #58a6ff; }
-    .additions { fill: #3fb950; }
-    .deletions { fill: #f85149; }
-    .title { font-weight: bold; fill: #58a6ff; }
+    .rv { font-family: "Courier New", Courier, monospace; font-size: 10px; fill: #8b949e; white-space: pre; }
+    .pn { font-family: "Courier New", Courier, monospace; font-size: 12.5px; fill: #c9d1d9; white-space: pre; }
+    .tr { font-family: "Courier New", Courier, monospace; font-size: 9px; fill: #30363d; white-space: pre; }
+    .pt { font-family: "Courier New", Courier, monospace; font-size: 9px; fill: #484f58; white-space: pre; }
+    .t  { fill: #58a6ff; font-weight: bold; }
+    .d  { fill: #484f58; }
+    .m  { fill: #e3b341; }
+    .s  { fill: #3fb950; }
+    .h  { fill: #58a6ff; }
+    .a  { fill: #3fb950; }
+    .r  { fill: #f85149; }
+    .gh { fill: #58a6ff; }
   </style>
 
-  <text x="30" y="50" class="text">
-    <tspan x="30" dy="1.2em">       .---.</tspan>
-    <tspan x="30" dy="1.2em">      /_____\</tspan>
-    <tspan x="30" dy="1.2em">      ( •_• )</tspan>
-    <tspan x="30" dy="1.2em">   ___/|   |\___</tspan>
-    <tspan x="30" dy="1.2em">  /|  ||   ||  |\</tspan>
-    <tspan x="30" dy="1.2em"> |_|  ||___||  |_|</tspan>
-    <tspan x="30" dy="1.2em">      /     \</tspan>
-    <tspan x="30" dy="1.2em">    _|_     _|_</tspan>
-    <tspan x="30" dy="1.2em">   /   \   /   \</tspan>
-    <tspan x="30" dy="1.2em">   \___/   \___/</tspan>
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bg)" rx="10" ry="10"/>
+  <rect width="100%" height="100%" fill="url(#grid)" rx="10" ry="10"/>
+
+  <!-- Stars -->
+  <circle cx="45" cy="22" r="1" fill="#c9d1d9" opacity="0.25"/>
+  <circle cx="195" cy="12" r="0.8" fill="#c9d1d9" opacity="0.2"/>
+  <circle cx="310" cy="38" r="1.1" fill="#c9d1d9" opacity="0.15"/>
+  <circle cx="140" cy="165" r="0.7" fill="#c9d1d9" opacity="0.18"/>
+  <circle cx="350" cy="55" r="0.9" fill="#c9d1d9" opacity="0.22"/>
+  <circle cx="25" cy="130" r="0.8" fill="#c9d1d9" opacity="0.12"/>
+  <circle cx="275" cy="8" r="0.6" fill="#c9d1d9" opacity="0.2"/>
+
+  <!-- Earth globe -->
+  <g transform="translate(115,82)">
+    <circle r="48" fill="url(#earthG)"/>
+    <path d="M -12,-35 Q 2,-42 18,-28 Q 26,-18 16,-8 Q 4,-14 -8,-22 Z" fill="#2ea043" opacity="0.55"/>
+    <path d="M -34,2 Q -24,-6 -12,4 Q -2,14 -18,22 Q -30,16 -34,6 Z" fill="#2ea043" opacity="0.45"/>
+    <path d="M 14,10 Q 28,4 36,16 Q 34,28 20,24 Q 12,18 14,10 Z" fill="#2ea043" opacity="0.5"/>
+    <path d="M -5,30 Q 5,26 12,32 Q 8,40 -2,38 Z" fill="#2ea043" opacity="0.35"/>
+    <ellipse cx="-14" cy="-18" rx="16" ry="10" fill="rgba(255,255,255,0.07)"/>
+    <circle r="48" fill="none" stroke="#58a6ff" stroke-width="0.8" opacity="0.3"/>
+  </g>
+
+  <!-- Particles -->
+  <text x="30" y="160" class="pt" xml:space="preserve">  $        .    *</text>
+  <text x="20" y="172" class="pt" xml:space="preserve">      .        $</text>
+
+  <!-- Rover ASCII art -->
+  <text x="10" y="190" class="rv" xml:space="preserve">
+    <tspan x="10" dy="0">                             .----.</tspan>
+    <tspan x="10" dy="1.15em">                            / .''. \</tspan>
+    <tspan x="10" dy="1.15em">                             '----'</tspan>
+    <tspan x="10" dy="1.15em">                              |%%|</tspan>
+    <tspan x="10" dy="1.15em">                         _____|%%|______</tspan>
+    <tspan x="10" dy="1.15em">                    ____/ .----------. \____</tspan>
+    <tspan x="10" dy="1.15em">               ____/ .---'  MASTCAM-Z  '--. \____</tspan>
+    <tspan x="10" dy="1.15em">              / .--'                        '--.  \</tspan>
+    <tspan x="10" dy="1.15em">             / /   +--+  .___________.  +--+   \ \</tspan>
+    <tspan x="10" dy="1.15em">            | |    |##|  | %$%$%$%$% |  |##|    | |</tspan>
+    <tspan x="10" dy="1.15em">            | |    |##|  | %$%$%$%$% |  |##|    | |</tspan>
+    <tspan x="10" dy="1.15em">       _____|_|____|##|__| %$ROVER$% |__|##|____|_|_____</tspan>
+    <tspan x="10" dy="1.15em">      / %$% | |%%%%|##|%| %$%MARS$% |%|##|%%%%| | %$% \</tspan>
+    <tspan x="10" dy="1.15em">     |@$@$@ | |%%%%|  |%| %$%$%$%$% |%|  |%%%%| |@$@$@|</tspan>
+    <tspan x="10" dy="1.15em">     |@$@$@ | |%%%%|  |%| %$%$%$%$% |%|  |%%%%| |@$@$@|</tspan>
+    <tspan x="10" dy="1.15em">      \ %$% | |%%%%|##|%| %$%$%$%$% |%|##|%%%%| | %$% /</tspan>
+    <tspan x="10" dy="1.15em">       \____|_|____|##|__|___________|__|##|____|_|____/</tspan>
+    <tspan x="10" dy="1.15em">       /oOo\ /oOo\ /oOo\                /oOo\ /oOo\ /oOo\</tspan>
+    <tspan x="10" dy="1.15em">      |(@%@)|(@%@)|(@%@)|              |(@%@)|(@%@)|(@%@)|</tspan>
+    <tspan x="10" dy="1.15em">       \oOo/ \oOo/ \oOo/                \oOo/ \oOo/ \oOo/</tspan>
   </text>
 
-  <text x="30" y="240" class="text highlight">.  .  .  .  .  .  .  .  .</text>
+  <!-- Terrain -->
+  <text x="10" y="432" class="tr" xml:space="preserve">..:':..::''.::.':..::..''..::..''..::..''..::..''..::..''..::''..::..''</text>
 
-  <text x="320" y="40" class="text">
-    <tspan x="320" dy="1.2em" class="title">arnav@perseverance ------------------------------------</tspan>
-    
-    <tspan x="320" dy="1.6em">. Status: .................... Active, Mission-Critical</tspan>
-    <tspan x="320" dy="1.2em">. Primary Target: ........ NASA SMEX $180M Prop. CINEMA</tspan>
-    <tspan x="320" dy="1.2em">. Affiliation: ..... Dartmouth College (Millan Lab Res)</tspan>
-    
-    <tspan x="320" dy="1.6em" class="title">. Stack -----------------------------------------------</tspan>
-    <tspan x="320" dy="1.2em">. Languages.Dev: .................. Python, C, C++, Java</tspan>
-    <tspan x="320" dy="1.2em">. Frameworks.Core: ....................... React, Node.js</tspan>
-    
-    <tspan x="320" dy="1.6em" class="title">. Network ---------------------------------------------</tspan>
-    <tspan x="320" dy="1.2em">. Contact.LinkedIn: ...................... arnav-singh7</tspan>
-    <tspan x="320" dy="1.2em">. Contact.Portfolio: ............. arnavsingh0.github.io</tspan>
-
-    <tspan x="320" dy="1.6em" class="title">. Telemetry -------------------------------------------</tspan>
-    <tspan x="320" dy="1.2em">. Repos: <tspan id="repo_data_dots">.....</tspan> <tspan id="repo_data" class="highlight">0</tspan> | Stars: <tspan id="star_data_dots">.....</tspan> <tspan id="star_data" class="highlight">0</tspan></tspan>
-    <tspan x="320" dy="1.2em">. Commits: <tspan id="commit_data_dots">...</tspan> <tspan id="commit_data" class="highlight">0</tspan> | Followers: <tspan id="follower_data_dots">.</tspan> <tspan id="follower_data" class="highlight">0</tspan></tspan>
-    <tspan x="320" dy="1.2em">. LOC Written: <tspan id="loc_data" class="highlight">0</tspan> ( <tspan id="loc_add" class="additions">0++</tspan>, <tspan id="loc_del" class="deletions">0--</tspan> )</tspan>
+  <!-- Right panel -->
+  <text x="420" y="50" class="pn" xml:space="preserve"><tspan x="420" dy="0" class="t">arnav@perseverance</tspan><tspan class="d"> ────────────────────────────────────</tspan>
+<tspan x="420" dy="1.85em"><tspan class="m">. Status:</tspan><tspan class="d"> ......................... </tspan>Active, Mission-Critical</tspan>
+<tspan x="420" dy="1.35em"><tspan class="m">. Active Sols:</tspan><tspan class="d"> ........................... </tspan><tspan id="sol_data" class="h">0</tspan></tspan>
+<tspan x="420" dy="1.35em"><tspan class="m">. Location:</tspan><tspan class="d"> .............. </tspan>Jezero Crater, Mars (Data Point)</tspan>
+<tspan x="420" dy="1.35em"><tspan class="m">. Primary Target:</tspan><tspan class="d"> ......................... </tspan>Ancient Delta</tspan>
+<tspan x="420" dy="1.35em"><tspan class="m">. Data Stream:</tspan><tspan class="d"> ................ </tspan>Direct to Deep Space Network</tspan>
+<tspan x="420" dy="1.85em"><tspan class="m">. Connect.Affiliation:</tspan>Dartmouth College (Millan Lab Research)</tspan>
+<tspan x="420" dy="1.85em"><tspan class="s">. Languages.Dev:</tspan><tspan class="d"> ..................... </tspan>Python, C, C++, Java</tspan>
+<tspan x="420" dy="1.35em"><tspan class="s">. Languages.Computer:</tspan><tspan class="d"> ........... </tspan>HTML, CSS, JSON, Markdown</tspan>
+<tspan x="420" dy="1.35em"><tspan class="s">. Languages.Human:</tspan><tspan class="d"> ................................ </tspan>English</tspan>
+<tspan x="420" dy="1.85em"><tspan class="s">. Interests.Core:</tspan><tspan class="d"> ........... </tspan>Astrophysics, Exoplanet Detection</tspan>
+<tspan x="420" dy="1.35em"><tspan class="s">. Interests.Hardware:</tspan><tspan class="d"> ............ </tspan>Embedded Systems, Robotics</tspan>
+<tspan x="420" dy="1.85em"><tspan class="m">. Contact.LinkedIn:</tspan><tspan class="d"> ............ </tspan>linkedin.com/in/arnav-singh7</tspan>
+<tspan x="420" dy="1.35em"><tspan class="m">. Contact.Portfolio:</tspan><tspan class="d"> .................. </tspan>arnavsingh0.github.io</tspan>
+<tspan x="420" dy="1.85em"><tspan class="gh">── GitHub Stats ──────────────────────────────────</tspan></tspan>
+<tspan x="420" dy="1.35em"><tspan class="m">.</tspan> Repos:<tspan class="d"> ..... </tspan><tspan id="repo_data" class="h">0</tspan> {Contributed: <tspan id="contributed_data" class="h">0</tspan>} | Stars:<tspan class="d"> ...... </tspan><tspan id="star_data" class="h">0</tspan></tspan>
+<tspan x="420" dy="1.35em"><tspan class="m">.</tspan> Commits:<tspan class="d"> .................. </tspan><tspan id="commit_data" class="h">0</tspan> | Followers:<tspan class="d"> ...... </tspan><tspan id="follower_data" class="h">0</tspan></tspan>
+<tspan x="420" dy="1.35em"><tspan class="m">.</tspan> Lines of Code on GitHub: <tspan id="loc_data" class="h">0</tspan> ( <tspan id="loc_add" class="a">0++</tspan>, <tspan id="loc_del" class="r">0--</tspan> )</tspan>
   </text>
 </svg>
