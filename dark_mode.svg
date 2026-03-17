@@ -88,7 +88,7 @@
   <!-- Right panel -->
   <text x="420" y="50" class="pn" xml:space="preserve"><tspan x="420" dy="0" class="t">arnav@perseverance</tspan><tspan class="d"> ────────────────────────────────────</tspan>
 <tspan x="420" dy="1.85em"><tspan class="m">. Status:</tspan><tspan class="d"> ......................... </tspan>Active, Mission-Critical</tspan>
-<tspan x="420" dy="1.35em"><tspan class="m">. Active Sols:</tspan><tspan class="d"> ........................... </tspan><tspan id="sol_data" class="h">1,801</tspan></tspan>
+<tspan x="420" dy="1.35em"><tspan class="m">. Active Sols:</tspan><tspan class="d"> ........................... </tspan><tspan id="sol_data" class="h">1,802</tspan></tspan>
 <tspan x="420" dy="1.35em"><tspan class="m">. Location:</tspan><tspan class="d"> .............. </tspan>Jezero Crater, Mars (Data Point)</tspan>
 <tspan x="420" dy="1.35em"><tspan class="m">. Primary Target:</tspan><tspan class="d"> ......................... </tspan>Ancient Delta</tspan>
 <tspan x="420" dy="1.35em"><tspan class="m">. Data Stream:</tspan><tspan class="d"> ................ </tspan>Direct to Deep Space Network</tspan>
@@ -101,8 +101,8 @@
 <tspan x="420" dy="1.85em"><tspan class="m">. Contact.LinkedIn:</tspan><tspan class="d"> ............ </tspan>linkedin.com/in/arnav-singh7</tspan>
 <tspan x="420" dy="1.35em"><tspan class="m">. Contact.Portfolio:</tspan><tspan class="d"> .................. </tspan>arnavsingh0.github.io</tspan>
 <tspan x="420" dy="1.85em"><tspan class="gh">── GitHub Stats ──────────────────────────────────</tspan></tspan>
-<tspan x="420" dy="1.35em"><tspan class="m">.</tspan> Repos:<tspan class="d"> ..... </tspan><tspan id="repo_data" class="h">11</tspan> {Contributed: <tspan id="contributed_data" class="h">22</tspan>} | Stars:<tspan class="d"> ...... </tspan><tspan id="star_data" class="h">7</tspan></tspan>
-<tspan x="420" dy="1.35em"><tspan class="m">.</tspan> Commits:<tspan class="d"> .................. </tspan><tspan id="commit_data" class="h">130</tspan> | Followers:<tspan class="d"> ...... </tspan><tspan id="follower_data" class="h">5</tspan></tspan>
-<tspan x="420" dy="1.35em"><tspan class="m">.</tspan> Lines of Code on GitHub: <tspan id="loc_data" class="h">3,642,629</tspan> ( <tspan id="loc_add" class="a">5,194,904++</tspan>, <tspan id="loc_del" class="r">1,552,275--</tspan> )</tspan>
+<tspan x="420" dy="1.35em"><tspan class="m">.</tspan> Repos:<tspan class="d"> ..... </tspan><tspan id="repo_data" class="h">11</tspan> {Contributed: <tspan id="contributed_data" class="h">22</tspan>} | Stars:<tspan class="d"> ...... </tspan><tspan id="star_data" class="h">11</tspan></tspan>
+<tspan x="420" dy="1.35em"><tspan class="m">.</tspan> Commits:<tspan class="d"> .................. </tspan><tspan id="commit_data" class="h">133</tspan> | Followers:<tspan class="d"> ...... </tspan><tspan id="follower_data" class="h">5</tspan></tspan>
+<tspan x="420" dy="1.35em"><tspan class="m">.</tspan> Lines of Code on GitHub: <tspan id="loc_data" class="h">3,646,906</tspan> ( <tspan id="loc_add" class="a">5,199,504++</tspan>, <tspan id="loc_del" class="r">1,552,598--</tspan> )</tspan>
   </text>
 </svg>
