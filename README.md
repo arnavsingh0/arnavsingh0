@@ -3,7 +3,7 @@
 physics & cs @ dartmouth.
 
 <!--STARTS_HERE_QUOTE_README-->
-<i>❝The original Halo was 3rd person and designed for Mac. In 2000 Microsoft bought Bungie and made it an exclusive for the original Xbox.❞</i>
+<i>❝“Maybe stories are just data with a soul.”— Brené Brown❞</i>
 <!--ENDS_HERE_QUOTE_README-->
 
 <p align="center">
