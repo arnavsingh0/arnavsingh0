@@ -88,7 +88,7 @@
   <!-- Right panel -->
   <text x="420" y="50" class="pn" xml:space="preserve"><tspan x="420" dy="0" class="t">arnav@perseverance</tspan><tspan class="d"> ────────────────────────────────────</tspan>
 <tspan x="420" dy="1.85em"><tspan class="m">. Status:</tspan><tspan class="d"> ......................... </tspan>Active, Mission-Critical</tspan>
-<tspan x="420" dy="1.35em"><tspan class="m">. Active Sols:</tspan><tspan class="d"> ........................... </tspan><tspan id="sol_data" class="h">1,827</tspan></tspan>
+<tspan x="420" dy="1.35em"><tspan class="m">. Active Sols:</tspan><tspan class="d"> ........................... </tspan><tspan id="sol_data" class="h">1,828</tspan></tspan>
 <tspan x="420" dy="1.35em"><tspan class="m">. Location:</tspan><tspan class="d"> .............. </tspan>Jezero Crater, Mars (Data Point)</tspan>
 <tspan x="420" dy="1.35em"><tspan class="m">. Primary Target:</tspan><tspan class="d"> ......................... </tspan>Ancient Delta</tspan>
 <tspan x="420" dy="1.35em"><tspan class="m">. Data Stream:</tspan><tspan class="d"> ................ </tspan>Direct to Deep Space Network</tspan>
