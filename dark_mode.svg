@@ -88,7 +88,7 @@
   <!-- Right panel -->
   <text x="420" y="50" class="pn" xml:space="preserve"><tspan x="420" dy="0" class="t">arnav@perseverance</tspan><tspan class="d"> ────────────────────────────────────</tspan>
 <tspan x="420" dy="1.85em"><tspan class="m">. Status:</tspan><tspan class="d"> ......................... </tspan>Active, Mission-Critical</tspan>
-<tspan x="420" dy="1.35em"><tspan class="m">. Active Sols:</tspan><tspan class="d"> ........................... </tspan><tspan id="sol_data" class="h">1,836</tspan></tspan>
+<tspan x="420" dy="1.35em"><tspan class="m">. Active Sols:</tspan><tspan class="d"> ........................... </tspan><tspan id="sol_data" class="h">1,837</tspan></tspan>
 <tspan x="420" dy="1.35em"><tspan class="m">. Location:</tspan><tspan class="d"> .............. </tspan>Jezero Crater, Mars (Data Point)</tspan>
 <tspan x="420" dy="1.35em"><tspan class="m">. Primary Target:</tspan><tspan class="d"> ......................... </tspan>Ancient Delta</tspan>
 <tspan x="420" dy="1.35em"><tspan class="m">. Data Stream:</tspan><tspan class="d"> ................ </tspan>Direct to Deep Space Network</tspan>
@@ -102,7 +102,7 @@
 <tspan x="420" dy="1.35em"><tspan class="m">. Contact.Portfolio:</tspan><tspan class="d"> .................. </tspan>arnavsingh0.github.io</tspan>
 <tspan x="420" dy="1.85em"><tspan class="gh">── GitHub Stats ──────────────────────────────────</tspan></tspan>
 <tspan x="420" dy="1.35em"><tspan class="m">.</tspan> Repos:<tspan class="d"> ..... </tspan><tspan id="repo_data" class="h">12</tspan> {Contributed: <tspan id="contributed_data" class="h">23</tspan>} | Stars:<tspan class="d"> ...... </tspan><tspan id="star_data" class="h">12</tspan></tspan>
-<tspan x="420" dy="1.35em"><tspan class="m">.</tspan> Commits:<tspan class="d"> .................. </tspan><tspan id="commit_data" class="h">136</tspan> | Followers:<tspan class="d"> ...... </tspan><tspan id="follower_data" class="h">6</tspan></tspan>
-<tspan x="420" dy="1.35em"><tspan class="m">.</tspan> Lines of Code on GitHub: <tspan id="loc_data" class="h">3,649,761</tspan> ( <tspan id="loc_add" class="a">5,202,361++</tspan>, <tspan id="loc_del" class="r">1,552,600--</tspan> )</tspan>
+<tspan x="420" dy="1.35em"><tspan class="m">.</tspan> Commits:<tspan class="d"> .................. </tspan><tspan id="commit_data" class="h">137</tspan> | Followers:<tspan class="d"> ...... </tspan><tspan id="follower_data" class="h">6</tspan></tspan>
+<tspan x="420" dy="1.35em"><tspan class="m">.</tspan> Lines of Code on GitHub: <tspan id="loc_data" class="h">3,649,763</tspan> ( <tspan id="loc_add" class="a">5,202,363++</tspan>, <tspan id="loc_del" class="r">1,552,600--</tspan> )</tspan>
   </text>
 </svg>
