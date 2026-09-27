@@ -14,6 +14,39 @@ def simple_request(func_name, query, variables):
         return request
     raise Exception(func_name, ' has failed with a', request.status_code, request.text, QUERY_COUNT)
 
+def repository_node(edge):
+    """Return a repository node, or None if the edge is null or incomplete.
+
+    GitHub's repositories connection can include null edges and null nodes
+    for deleted or inaccessible repositories. Inline-fragment fields such as
+    nameWithOwner are also absent when the node is not a Repository.
+    """
+    if not isinstance(edge, dict):
+        return None
+    node = edge.get('node')
+    if not isinstance(node, dict):
+        return None
+    name = node.get('nameWithOwner')
+    if not isinstance(name, str) or not name:
+        return None
+    return node
+
+def stars_from_edges(edges):
+    total = 0
+    for edge in edges or []:
+        if not isinstance(edge, dict):
+            continue
+        node = edge.get('node')
+        if not isinstance(node, dict):
+            continue
+        stargazers = node.get('stargazers')
+        if not isinstance(stargazers, dict):
+            continue
+        count = stargazers.get('totalCount')
+        if isinstance(count, int):
+            total += count
+    return total
+
 def graph_repos_stars(count_type, owner_affiliation, cursor=None, stars_acc=0):
     query_count('graph_repos_stars')
     query = '''
@@ -44,8 +77,7 @@ def graph_repos_stars(count_type, owner_affiliation, cursor=None, stars_acc=0):
     if count_type == 'repos':
         return data['totalCount']
     if count_type == 'stars':
-        page_stars = sum(node['node']['stargazers']['totalCount'] for node in data['edges'])
-        stars_acc += page_stars
+        stars_acc += stars_from_edges(data['edges'])
         if data['pageInfo']['hasNextPage']:
             return graph_repos_stars(count_type, owner_affiliation, data['pageInfo']['endCursor'], stars_acc)
         return stars_acc
@@ -134,7 +166,7 @@ def loc_query(owner_affiliation, comment_size=0, force_cache=False, cursor=None,
     }'''
     variables = {'owner_affiliation': owner_affiliation, 'login': USER_NAME, 'cursor': cursor}
     request = simple_request(loc_query.__name__, query, variables)
-    edges_data = request.json()['data']['user']['repositories']['edges']
+    edges_data = request.json()['data']['user']['repositories']['edges'] or []
     edges.extend(edges_data)
     
     if request.json()['data']['user']['repositories']['pageInfo']['hasNextPage']:
@@ -162,16 +194,20 @@ def cache_builder(edges, comment_size, force_cache, loc_add=0, loc_del=0):
     cache_comment = data[:comment_size]
     data = data[comment_size:]
     for index in range(len(edges)):
+        node = repository_node(edges[index])
+        if node is None or index >= len(data):
+            continue
         parts = data[index].split()
         if len(parts) >= 5:
             repo_hash, commit_count = parts[0], parts[1]
-            if repo_hash == hashlib.sha256(edges[index]['node']['nameWithOwner'].encode('utf-8')).hexdigest():
+            if repo_hash == hashlib.sha256(node['nameWithOwner'].encode('utf-8')).hexdigest():
                 try:
-                    if int(commit_count) != edges[index]['node']['defaultBranchRef']['target']['history']['totalCount']:
-                        owner, repo_name = edges[index]['node']['nameWithOwner'].split('/')
+                    history_count = node['defaultBranchRef']['target']['history']['totalCount']
+                    if int(commit_count) != history_count:
+                        owner, repo_name = node['nameWithOwner'].split('/')
                         loc = recursive_loc(owner, repo_name, data, cache_comment)
                         if isinstance(loc, tuple):
-                            data[index] = f"{repo_hash} {edges[index]['node']['defaultBranchRef']['target']['history']['totalCount']} {loc[2]} {loc[0]} {loc[1]}\n"
+                            data[index] = f"{repo_hash} {history_count} {loc[2]} {loc[0]} {loc[1]}\n"
                 except (TypeError, KeyError):
                     data[index] = f"{repo_hash} 0 0 0 0\n"
     with open(filename, 'w') as f:
@@ -189,8 +225,13 @@ def flush_cache(edges, filename, comment_size):
         data = f.readlines()[:comment_size] if comment_size > 0 else []
     with open(filename, 'w') as f:
         f.writelines(data)
-        for node in edges:
-            f.write(hashlib.sha256(node['node']['nameWithOwner'].encode('utf-8')).hexdigest() + ' 0 0 0 0\n')
+        for edge in edges:
+            node = repository_node(edge)
+            if node is None:
+                # Keep one cache slot so later lines stay aligned with edges.
+                f.write('0 0 0 0 0\n')
+                continue
+            f.write(hashlib.sha256(node['nameWithOwner'].encode('utf-8')).hexdigest() + ' 0 0 0 0\n')
 
 def force_close_file(data, cache_comment):
     filename = 'cache/'+hashlib.sha256(USER_NAME.encode('utf-8')).hexdigest()+'.txt'
