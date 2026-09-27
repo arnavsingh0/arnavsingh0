@@ -427,32 +427,198 @@
   <text x="30" y="160" class="pt" xml:space="preserve">  $        .    *</text>
   <text x="20" y="172" class="pt" xml:space="preserve">      .        $</text>
 
-  <!-- Rover ASCII art -->
-  <text x="10" y="190" class="rv" xml:space="preserve">
-    <tspan x="10" dy="0">                             .----.</tspan>
-    <tspan x="10" dy="1.15em">                            / .''. \</tspan>
-    <tspan x="10" dy="1.15em">                             '----'</tspan>
-    <tspan x="10" dy="1.15em">                              |%%|</tspan>
-    <tspan x="10" dy="1.15em">                         _____|%%|______</tspan>
-    <tspan x="10" dy="1.15em">                    ____/ .----------. \____</tspan>
-    <tspan x="10" dy="1.15em">               ____/ .---'  MASTCAM-Z  '--. \____</tspan>
-    <tspan x="10" dy="1.15em">              / .--'                        '--.  \</tspan>
-    <tspan x="10" dy="1.15em">             / /   +--+  .___________.  +--+   \ \</tspan>
-    <tspan x="10" dy="1.15em">            | |    |##|  | %$%$%$%$% |  |##|    | |</tspan>
-    <tspan x="10" dy="1.15em">            | |    |##|  | %$%$%$%$% |  |##|    | |</tspan>
-    <tspan x="10" dy="1.15em">       _____|_|____|##|__| %$ROVER$% |__|##|____|_|_____</tspan>
-    <tspan x="10" dy="1.15em">      / %$% | |%%%%|##|%| %$%MARS$% |%|##|%%%%| | %$% \</tspan>
-    <tspan x="10" dy="1.15em">     |@$@$@ | |%%%%|  |%| %$%$%$%$% |%|  |%%%%| |@$@$@|</tspan>
-    <tspan x="10" dy="1.15em">     |@$@$@ | |%%%%|  |%| %$%$%$%$% |%|  |%%%%| |@$@$@|</tspan>
-    <tspan x="10" dy="1.15em">      \ %$% | |%%%%|##|%| %$%$%$%$% |%|##|%%%%| | %$% /</tspan>
-    <tspan x="10" dy="1.15em">       \____|_|____|##|__|___________|__|##|____|_|____/</tspan>
-    <tspan x="10" dy="1.15em">       /oOo\ /oOo\ /oOo\                /oOo\ /oOo\ /oOo\</tspan>
-    <tspan x="10" dy="1.15em">      |(@%@)|(@%@)|(@%@)|              |(@%@)|(@%@)|(@%@)|</tspan>
-    <tspan x="10" dy="1.15em">       \oOo/ \oOo/ \oOo/                \oOo/ \oOo/ \oOo/</tspan>
-  </text>
+  <!-- Perseverance, front three-quarter. Mastcam-Z head, arm turret, deck,
+       MMRTG fins, and two rocker-bogies. Frame 0 stays put if SMIL is unavailable. -->
+  <!-- DSN downlink: faint arc from the Earth limb to the mast. Dashes and two packets. -->
+  <g id="dsn-link">
+    <path d="M 262.4 141.9 C 348.0 128.0, 336.0 168.0, 175.0 192.0" fill="none" stroke="#58a6ff" stroke-width="5" stroke-linecap="round" opacity="0.12"/>
+    <path d="M 262.4 141.9 C 348.0 128.0, 336.0 168.0, 175.0 192.0" fill="none" stroke="#58a6ff" stroke-width="1.35" stroke-linecap="round" stroke-dasharray="2 7" opacity="0.7">
+      <animate attributeName="stroke-dashoffset" from="0" to="-54" dur="1.8s" repeatCount="indefinite"/>
+    </path>
+    <circle cx="262.4" cy="141.9" r="2.1" fill="#58a6ff" opacity="0.5">
+      <animate attributeName="opacity" values="0.25;0.75;0.25" dur="4.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="2.4" fill="#58a6ff" cx="262.4" cy="141.9" opacity="0">
+      <animate attributeName="cx" dur="4.6s" repeatCount="indefinite" values="262.4;277.3;289.8;299.9;307.5;312.5;314.8;314.4;311.2;305.1;296.0;283.9;268.6;250.2;228.5;203.5;175.0"/>
+      <animate attributeName="cy" dur="4.6s" repeatCount="indefinite" values="141.9;139.9;139.1;139.3;140.5;142.5;145.3;148.8;152.7;157.2;161.9;166.9;172.1;177.3;182.4;187.3;192.0"/>
+      <animate attributeName="opacity" dur="4.6s" repeatCount="indefinite" values="0;0.9;0.9;0" keyTimes="0;0.08;0.88;1"/>
+    </circle>
+    <circle r="1.9" fill="#c9d1d9" cx="262.4" cy="141.9" opacity="0">
+      <animate attributeName="cx" dur="4.6s" repeatCount="indefinite" begin="2.3s" values="262.4;277.3;289.8;299.9;307.5;312.5;314.8;314.4;311.2;305.1;296.0;283.9;268.6;250.2;228.5;203.5;175.0"/>
+      <animate attributeName="cy" dur="4.6s" repeatCount="indefinite" begin="2.3s" values="141.9;139.9;139.1;139.3;140.5;142.5;145.3;148.8;152.7;157.2;161.9;166.9;172.1;177.3;182.4;187.3;192.0"/>
+      <animate attributeName="opacity" dur="4.6s" repeatCount="indefinite" begin="2.3s" values="0;0.7;0.7;0" keyTimes="0;0.08;0.88;1"/>
+    </circle>
+  </g>
 
-  <!-- Terrain -->
-  <text x="10" y="432" class="tr" xml:space="preserve">..:':..::''.::.':..::..''..::..''..::..''..::..''..::..''..::''..::..''</text>
+  <g id="mastcam">
+    <g opacity="1">
+      <animate attributeName="opacity" dur="12s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.250000;1"/>
+      <text y="194.0" class="rv" xml:space="preserve">
+        <tspan x="16" dy="0" class="es">                    .------------.</tspan>
+        <tspan x="16" dy="1.15em" class="es">                   /     </tspan>
+        <tspan dy="0" class="h">(O)      <animate attributeName="opacity" values="0.4;1;0.4" dur="3.6s" repeatCount="indefinite"/></tspan>
+        <tspan dy="0" class="es">\</tspan>
+        <tspan x="16" dy="1.15em" class="es">                  |  </tspan>
+        <tspan dy="0" class="h">[=]      [=]  <animate attributeName="opacity" values="0.4;1;0.4" dur="3.6s" repeatCount="indefinite"/></tspan>
+        <tspan dy="0" class="es">|</tspan>
+        <tspan x="16" dy="1.15em" class="es">                   '-------||------'</tspan>
+      </text>
+    </g>
+    <g opacity="0" transform="translate(-6,0)">
+      <animate attributeName="opacity" dur="12s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.250000;0.500000;1"/>
+      <text y="194.0" class="rv" xml:space="preserve">
+        <tspan x="16" dy="0" class="es">                    .------------.</tspan>
+        <tspan x="16" dy="1.15em" class="es">                   /     </tspan>
+        <tspan dy="0" class="h">(O)      <animate attributeName="opacity" values="0.4;1;0.4" dur="3.6s" repeatCount="indefinite"/></tspan>
+        <tspan dy="0" class="es">\</tspan>
+        <tspan x="16" dy="1.15em" class="es">                  |  </tspan>
+        <tspan dy="0" class="h">[=]      [=]  <animate attributeName="opacity" values="0.4;1;0.4" dur="3.6s" repeatCount="indefinite"/></tspan>
+        <tspan dy="0" class="es">|</tspan>
+        <tspan x="16" dy="1.15em" class="es">                   '-------||------'</tspan>
+      </text>
+    </g>
+    <g opacity="0" transform="translate(0,6)">
+      <animate attributeName="opacity" dur="12s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.500000;0.750000;1"/>
+      <text y="194.0" class="rv" xml:space="preserve">
+        <tspan x="16" dy="0" class="es">                    .------------.</tspan>
+        <tspan x="16" dy="1.15em" class="es">                   /     </tspan>
+        <tspan dy="0" class="h">(O)      <animate attributeName="opacity" values="0.4;1;0.4" dur="3.6s" repeatCount="indefinite"/></tspan>
+        <tspan dy="0" class="es">\</tspan>
+        <tspan x="16" dy="1.15em" class="es">                  |  </tspan>
+        <tspan dy="0" class="h">[=]      [=]  <animate attributeName="opacity" values="0.4;1;0.4" dur="3.6s" repeatCount="indefinite"/></tspan>
+        <tspan dy="0" class="es">|</tspan>
+        <tspan x="16" dy="1.15em" class="es">                   '-------||------'</tspan>
+      </text>
+    </g>
+    <g opacity="0" transform="translate(6,0)">
+      <animate attributeName="opacity" dur="12s" repeatCount="indefinite" calcMode="discrete" values="0;1;1" keyTimes="0;0.750000;1"/>
+      <text y="194.0" class="rv" xml:space="preserve">
+        <tspan x="16" dy="0" class="es">                    .------------.</tspan>
+        <tspan x="16" dy="1.15em" class="es">                   /     </tspan>
+        <tspan dy="0" class="h">(O)      <animate attributeName="opacity" values="0.4;1;0.4" dur="3.6s" repeatCount="indefinite"/></tspan>
+        <tspan dy="0" class="es">\</tspan>
+        <tspan x="16" dy="1.15em" class="es">                  |  </tspan>
+        <tspan dy="0" class="h">[=]      [=]  <animate attributeName="opacity" values="0.4;1;0.4" dur="3.6s" repeatCount="indefinite"/></tspan>
+        <tspan dy="0" class="es">|</tspan>
+        <tspan x="16" dy="1.15em" class="es">                   '-------||------'</tspan>
+      </text>
+    </g>
+  </g>
+
+  <g id="rover-body">
+    <text y="240.0" class="rv" xml:space="preserve">
+      <tspan x="16" dy="0" class="es">                           ||</tspan>
+      <tspan x="16" dy="1.15em" class="es">                           ||           </tspan>
+      <tspan dy="0" class="es">||||||<animate attributeName="opacity" values="0.62;1;0.62" dur="5.6s" repeatCount="indefinite"/></tspan>
+      <tspan x="16" dy="1.15em" class="es">                        ___||___        </tspan>
+      <tspan dy="0" class="es">||||||<animate attributeName="opacity" values="0.62;1;0.62" dur="5.6s" repeatCount="indefinite"/></tspan>
+      <tspan x="16" dy="1.15em"> __         </tspan>
+      <tspan dy="0" class="es">.--------------------------.</tspan>
+      <tspan dy="0" class="es">||||||<animate attributeName="opacity" values="0.62;1;0.62" dur="5.6s" repeatCount="indefinite"/></tspan>
+      <tspan x="16" dy="1.15em">/  \_____=</tspan>
+      <tspan dy="0" class="es">/               </tspan>
+      <tspan dy="0">.-.          </tspan>
+      <tspan dy="0" class="es">\</tspan>
+      <tspan dy="0" class="es">||||||<animate attributeName="opacity" values="0.62;1;0.62" dur="5.6s" repeatCount="indefinite"/></tspan>
+      <tspan x="16" dy="1.15em">|(</tspan>
+      <tspan dy="0" class="h">::<animate attributeName="opacity" values="0.4;1;0.4" dur="3.6s" repeatCount="indefinite"/></tspan>
+      <tspan dy="0">)|    </tspan>
+      <tspan dy="0" class="es">|               </tspan>
+      <tspan dy="0">(+)          </tspan>
+      <tspan dy="0" class="es">|</tspan>
+      <tspan dy="0" class="es">||||||<animate attributeName="opacity" values="0.62;1;0.62" dur="5.6s" repeatCount="indefinite"/></tspan>
+      <tspan x="16" dy="1.15em">\__/      </tspan>
+      <tspan dy="0" class="es">\               </tspan>
+      <tspan dy="0">'-'          </tspan>
+      <tspan dy="0" class="es">/</tspan>
+      <tspan dy="0" class="es">'===='<animate attributeName="opacity" values="0.62;1;0.62" dur="5.6s" repeatCount="indefinite"/></tspan>
+      <tspan x="16" dy="1.15em"> ||         </tspan>
+      <tspan dy="0" class="es">'-</tspan>
+      <tspan dy="0" class="s">*<animate attributeName="opacity" values="0.35;0.95;0.35" dur="2.8s" repeatCount="indefinite"/></tspan>
+      <tspan dy="0" class="es">-------------------</tspan>
+      <tspan dy="0" class="r">*<animate attributeName="opacity" values="0.3;0.9;0.3" dur="3.4s" repeatCount="indefinite"/></tspan>
+      <tspan dy="0" class="es">----'</tspan>
+      <tspan x="16" dy="1.15em" class="en">       +---------------+           +---------------+</tspan>
+      <tspan x="16" dy="1.15em" class="en">       |       |       |           |       |       |</tspan>
+      <tspan x="16" dy="1.15em" class="en">       |       |       |           |       |       |</tspan>
+    </text>
+  </g>
+
+  <g id="wheels">
+    <g opacity="1">
+      <animate attributeName="opacity" dur="6.4s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.250000;1"/>
+      <text y="366.5" class="rv" xml:space="preserve">
+        <tspan x="16" dy="0" class="en">     .--.    .--.    .--.        .--.    .--.    .--.</tspan>
+        <tspan x="16" dy="1.15em" class="en">    /||||\  /||||\  /||||\      /||||\  /||||\  /||||\</tspan>
+        <tspan x="16" dy="1.15em" class="en">    |&gt; &lt; |  |&gt; &lt; |  |&gt; &lt; |      |&gt; &lt; |  |&gt; &lt; |  |&gt; &lt; |</tspan>
+        <tspan x="16" dy="1.15em" class="en">     \__/    \__/    \__/        \__/    \__/    \__/</tspan>
+      </text>
+    </g>
+    <g opacity="0">
+      <animate attributeName="opacity" dur="6.4s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.250000;0.500000;1"/>
+      <text y="366.5" class="rv" xml:space="preserve">
+        <tspan x="16" dy="0" class="en">     .--.    .--.    .--.        .--.    .--.    .--.</tspan>
+        <tspan x="16" dy="1.15em" class="en">    //|||\  //|||\  //|||\      //|||\  //|||\  //|||\</tspan>
+        <tspan x="16" dy="1.15em" class="en">    | &gt;&lt; |  | &gt;&lt; |  | &gt;&lt; |      | &gt;&lt; |  | &gt;&lt; |  | &gt;&lt; |</tspan>
+        <tspan x="16" dy="1.15em" class="en">     \__/    \__/    \__/        \__/    \__/    \__/</tspan>
+      </text>
+    </g>
+    <g opacity="0">
+      <animate attributeName="opacity" dur="6.4s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.500000;0.750000;1"/>
+      <text y="366.5" class="rv" xml:space="preserve">
+        <tspan x="16" dy="0" class="en">     .--.    .--.    .--.        .--.    .--.    .--.</tspan>
+        <tspan x="16" dy="1.15em" class="en">    /|/||\  /|/||\  /|/||\      /|/||\  /|/||\  /|/||\</tspan>
+        <tspan x="16" dy="1.15em" class="en">    |&gt;&lt; &lt;|  |&gt;&lt; &lt;|  |&gt;&lt; &lt;|      |&gt;&lt; &lt;|  |&gt;&lt; &lt;|  |&gt;&lt; &lt;|</tspan>
+        <tspan x="16" dy="1.15em" class="en">     \__/    \__/    \__/        \__/    \__/    \__/</tspan>
+      </text>
+    </g>
+    <g opacity="0">
+      <animate attributeName="opacity" dur="6.4s" repeatCount="indefinite" calcMode="discrete" values="0;1;1" keyTimes="0;0.750000;1"/>
+      <text y="366.5" class="rv" xml:space="preserve">
+        <tspan x="16" dy="0" class="en">     .--.    .--.    .--.        .--.    .--.    .--.</tspan>
+        <tspan x="16" dy="1.15em" class="en">    /||/|\  /||/|\  /||/|\      /||/|\  /||/|\  /||/|\</tspan>
+        <tspan x="16" dy="1.15em" class="en">    | &lt; &gt;|  | &lt; &gt;|  | &lt; &gt;|      | &lt; &gt;|  | &lt; &gt;|  | &lt; &gt;|</tspan>
+        <tspan x="16" dy="1.15em" class="en">     \__/    \__/    \__/        \__/    \__/    \__/</tspan>
+      </text>
+    </g>
+  </g>
+
+  <g id="terrain">
+    <g opacity="1">
+      <animate attributeName="opacity" dur="9s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.333333;1"/>
+      <text x="10" y="432" class="tr" xml:space="preserve">..:':..::''.::.':..::..''..::..''..::..''..::..''..::..''..::''..::..''</text>
+    </g>
+    <g opacity="0">
+      <animate attributeName="opacity" dur="9s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.333333;0.666667;1"/>
+      <text x="10" y="432" class="tr" xml:space="preserve">:':..::''.::.':..::..''..::..''..::..''..::..''..::..''..::''..::..''..</text>
+    </g>
+    <g opacity="0">
+      <animate attributeName="opacity" dur="9s" repeatCount="indefinite" calcMode="discrete" values="0;1;1" keyTimes="0;0.666667;1"/>
+      <text x="10" y="432" class="tr" xml:space="preserve">:..::''.::.':..::..''..::..''..::..''..::..''..::..''..::''..::..''..:'</text>
+    </g>
+  </g>
+  <g id="regolith">
+    <g opacity="0" fill="#8b949e">
+      <animate attributeName="opacity" dur="4.2s" begin="0.0s" repeatCount="indefinite" values="0;0.55;0.3;0" keyTimes="0;0.18;0.5;1"/>
+      <animateTransform attributeName="transform" type="translate" dur="4.2s" begin="0.0s" repeatCount="indefinite" values="58,407; 50,393; 46,381"/>
+      <text font-family="Courier New, Courier, monospace" font-size="8">.</text>
+    </g>
+    <g opacity="0" fill="#6e7681">
+      <animate attributeName="opacity" dur="4.8s" begin="0.8s" repeatCount="indefinite" values="0;0.55;0.3;0" keyTimes="0;0.18;0.5;1"/>
+      <animateTransform attributeName="transform" type="translate" dur="4.8s" begin="0.8s" repeatCount="indefinite" values="106,407; 98,393; 94,381"/>
+      <text font-family="Courier New, Courier, monospace" font-size="8">:</text>
+    </g>
+    <g opacity="0" fill="#8b949e">
+      <animate attributeName="opacity" dur="3.9s" begin="1.6s" repeatCount="indefinite" values="0;0.55;0.3;0" keyTimes="0;0.18;0.5;1"/>
+      <animateTransform attributeName="transform" type="translate" dur="3.9s" begin="1.6s" repeatCount="indefinite" values="154,407; 146,393; 142,381"/>
+      <text font-family="Courier New, Courier, monospace" font-size="8">.</text>
+    </g>
+    <g opacity="0" fill="#6e7681">
+      <animate attributeName="opacity" dur="5.1s" begin="0.4s" repeatCount="indefinite" values="0;0.55;0.3;0" keyTimes="0;0.18;0.5;1"/>
+      <animateTransform attributeName="transform" type="translate" dur="5.1s" begin="0.4s" repeatCount="indefinite" values="274,407; 266,393; 262,381"/>
+      <text font-family="Courier New, Courier, monospace" font-size="8">'</text>
+    </g>
+  </g>
 
   <!-- Right panel -->
   <text x="420" y="50" class="pn" xml:space="preserve"><tspan x="420" dy="0" class="t">arnav@perseverance</tspan><tspan class="d"> ────────────────────────────────────</tspan>
