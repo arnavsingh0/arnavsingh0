@@ -511,22 +511,32 @@
       <path d="M 308.4 211.9 C 420.0 80.0, 620.0 70.0, 720.0 161.0" fill="none" stroke="url(#dsn-grad)" stroke-width="10" stroke-linecap="round" opacity="0.22">
         <animate attributeName="opacity" values="0.12;0.30;0.12" dur="5.2s" repeatCount="indefinite"/>
       </path>
-      <path d="M 308.4 211.9 C 420.0 80.0, 620.0 70.0, 720.0 161.0" fill="none" stroke="url(#dsn-grad)" stroke-width="1.7" stroke-linecap="round" opacity="0.55"/>
-      <path d="M 308.4 211.9 C 420.0 80.0, 620.0 70.0, 720.0 161.0" fill="none" stroke="url(#dsn-grad)" stroke-width="2.1" stroke-linecap="round" stroke-dasharray="11 13" opacity="0.95">
-        <animate attributeName="stroke-dashoffset" from="0" to="-96" dur="2.8s" repeatCount="indefinite"/>
+      <path d="M 308.4 211.9 C 420.0 80.0, 620.0 70.0, 720.0 161.0" fill="none" stroke="url(#dsn-grad)" stroke-width="1.5" stroke-linecap="round" opacity="0.42"/>
+      <path d="M 308.4 211.9 C 420.0 80.0, 620.0 70.0, 720.0 161.0" fill="none" stroke="#f7fbff" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="14 18" opacity="0.95">
+        <animate attributeName="stroke-dashoffset" from="0" to="-128" dur="2.4s" repeatCount="indefinite"/>
       </path>
-      <circle cx="308.4" cy="211.9" r="2.4" fill="#8eebff">
-        <animate attributeName="opacity" values="0.28;0.9;0.28" dur="4.4s" repeatCount="indefinite"/>
+      <circle cx="308.4" cy="211.9" r="2.6" fill="#8eebff">
+        <animate attributeName="opacity" values="0.35;1;0.35" dur="4.4s" repeatCount="indefinite"/>
       </circle>
-      <circle r="2.35" fill="#f7fbff" cx="308.4" cy="211.9" opacity="0">
+      <circle r="7" fill="#f7fbff" cx="308.4" cy="211.9" opacity="0">
         <animate attributeName="cx" dur="6.2s" repeatCount="indefinite" values="308.4;330.3;354.0;379.3;405.7;433.2;461.3;489.9;518.5;547.1;575.2;602.7;629.2;654.4;678.2;700.1;720.0"/>
         <animate attributeName="cy" dur="6.2s" repeatCount="indefinite" values="211.9;188.6;168.1;150.4;135.5;123.3;113.8;107.0;102.9;101.3;102.3;105.9;112.0;120.6;131.7;145.1;161.0"/>
-        <animate attributeName="opacity" dur="6.2s" repeatCount="indefinite" values="0;0.95;0.95;0" keyTimes="0;0.06;0.9;1"/>
+        <animate attributeName="opacity" dur="6.2s" repeatCount="indefinite" values="0;0.28;0.28;0" keyTimes="0;0.06;0.9;1"/>
       </circle>
-      <circle r="1.7" fill="#ffd7a8" cx="308.4" cy="211.9" opacity="0">
+      <circle r="3.4" fill="#f7fbff" cx="308.4" cy="211.9" opacity="0">
+        <animate attributeName="cx" dur="6.2s" repeatCount="indefinite" values="308.4;330.3;354.0;379.3;405.7;433.2;461.3;489.9;518.5;547.1;575.2;602.7;629.2;654.4;678.2;700.1;720.0"/>
+        <animate attributeName="cy" dur="6.2s" repeatCount="indefinite" values="211.9;188.6;168.1;150.4;135.5;123.3;113.8;107.0;102.9;101.3;102.3;105.9;112.0;120.6;131.7;145.1;161.0"/>
+        <animate attributeName="opacity" dur="6.2s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.06;0.9;1"/>
+      </circle>
+      <circle r="6.2" fill="#ffd7a8" cx="308.4" cy="211.9" opacity="0">
         <animate attributeName="cx" dur="6.2s" repeatCount="indefinite" begin="3.1s" values="308.4;330.3;354.0;379.3;405.7;433.2;461.3;489.9;518.5;547.1;575.2;602.7;629.2;654.4;678.2;700.1;720.0"/>
         <animate attributeName="cy" dur="6.2s" repeatCount="indefinite" begin="3.1s" values="211.9;188.6;168.1;150.4;135.5;123.3;113.8;107.0;102.9;101.3;102.3;105.9;112.0;120.6;131.7;145.1;161.0"/>
-        <animate attributeName="opacity" dur="6.2s" repeatCount="indefinite" begin="3.1s" values="0;0.82;0.82;0" keyTimes="0;0.06;0.9;1"/>
+        <animate attributeName="opacity" dur="6.2s" repeatCount="indefinite" begin="3.1s" values="0;0.28;0.28;0" keyTimes="0;0.06;0.9;1"/>
+      </circle>
+      <circle r="3.1" fill="#ffd7a8" cx="308.4" cy="211.9" opacity="0">
+        <animate attributeName="cx" dur="6.2s" repeatCount="indefinite" begin="3.1s" values="308.4;330.3;354.0;379.3;405.7;433.2;461.3;489.9;518.5;547.1;575.2;602.7;629.2;654.4;678.2;700.1;720.0"/>
+        <animate attributeName="cy" dur="6.2s" repeatCount="indefinite" begin="3.1s" values="211.9;188.6;168.1;150.4;135.5;123.3;113.8;107.0;102.9;101.3;102.3;105.9;112.0;120.6;131.7;145.1;161.0"/>
+        <animate attributeName="opacity" dur="6.2s" repeatCount="indefinite" begin="3.1s" values="0;0.95;0.95;0" keyTimes="0;0.06;0.9;1"/>
       </circle>
     </g>
     <g id="perseverance" class="mars" transform="translate(542,-34)">
@@ -661,6 +671,13 @@
     </g>
   </g>
     </g>
+    <!-- Receiver lamp on the mast head, where the arc arrives. -->
+    <circle cx="720" cy="158" r="6" fill="#ffd59a" opacity="0.22">
+      <animate attributeName="opacity" values="0.08;0.34;0.08" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="720" cy="158" r="2.5" fill="#fff1d2">
+      <animate attributeName="opacity" values="0.45;1;0.45" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
     <g id="terrain">
       <g opacity="1">
         <animate attributeName="opacity" dur="9s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.333333;1"/>
