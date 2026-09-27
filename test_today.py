@@ -199,6 +199,36 @@ class SvgOverwriteTests(unittest.TestCase):
         self.assertIn('>150++<', text)
         self.assertIn('>15--<', text)
 
+    def test_live_svg_keeps_smil_while_data_ids_update(self):
+        root = os.path.dirname(os.path.abspath(today.__file__))
+        source = os.path.join(root, 'dark_mode.svg')
+        with open(source) as handle:
+            original = handle.read()
+        animate_count = original.count('<animate ') + original.count('<animateTransform ')
+        self.assertGreater(animate_count, 20)
+        ids = (
+            'commit_data', 'star_data', 'repo_data', 'contributed_data',
+            'follower_data', 'sol_data', 'loc_data', 'loc_add', 'loc_del',
+        )
+        for element_id in ids:
+            self.assertIn(f'id="{element_id}"', original)
+        with tempfile.TemporaryDirectory() as tmp:
+            path = os.path.join(tmp, 'dark_mode.svg')
+            with open(path, 'w') as handle:
+                handle.write(original)
+            today.svg_overwrite(path, 12, 7, 4, 2, 9, 100, [150, 15, 135, True])
+            with open(path) as handle:
+                updated = handle.read()
+        self.assertEqual(updated.count('<animate ') + updated.count('<animateTransform '), animate_count)
+        self.assertIn('id="dsn-link"', updated)
+        self.assertIn('id="mastcam"', updated)
+        self.assertIn('id="wheels"', updated)
+        self.assertIn('>12<', updated)
+        self.assertIn('>135<', updated)
+        self.assertIn('>150++<', updated)
+        self.assertIn('>15--<', updated)
+        self.assertIn('dur="12s"', updated)
+
 
 if __name__ == '__main__':
     unittest.main()

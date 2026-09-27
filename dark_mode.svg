@@ -423,16 +423,74 @@
     </g>
   </g>
 
+  <!-- DSN downlink: faint arc from the Earth limb to the mast. SMIL dash flow plus packet dots.
+       Crest stays near x=349, left of the stats panel. -->
+  <g id="dsn-link">
+    <path d="M 282 116 C 392 128, 368 174, 200 190" fill="none" stroke="#58a6ff" stroke-width="5.5" stroke-linecap="round" opacity="0.14"/>
+    <path d="M 282 116 C 392 128, 368 174, 200 190" fill="none" stroke="#58a6ff" stroke-width="1.45" stroke-linecap="round" stroke-dasharray="2 7" opacity="0.72">
+      <animate attributeName="stroke-dashoffset" from="0" to="-54" dur="1.6s" repeatCount="indefinite"/>
+    </path>
+    <circle cx="282" cy="116" r="2.2" fill="#58a6ff" opacity="0.55">
+      <animate attributeName="opacity" values="0.25;0.8;0.25" dur="4.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="2.7" fill="#58a6ff" cx="282" cy="116" opacity="0">
+      <animate attributeName="cx" dur="4.8s" repeatCount="indefinite" values="282.0;301.1;316.9;329.7;339.2;345.6;348.7;348.6;345.2;338.6;328.8;315.6;299.2;279.4;256.3;229.8;200.0"/>
+      <animate attributeName="cy" dur="4.8s" repeatCount="indefinite" values="116.0;118.6;122.0;125.9;130.4;135.3;140.5;145.9;151.5;157.1;162.7;168.2;173.4;178.3;182.7;186.7;190.0"/>
+      <animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" values="0;0.95;0.95;0" keyTimes="0;0.06;0.9;1"/>
+    </circle>
+    <circle r="2.15" fill="#3fb950" cx="282" cy="116" opacity="0">
+      <animate attributeName="cx" dur="4.8s" repeatCount="indefinite" begin="1.6s" values="282.0;301.1;316.9;329.7;339.2;345.6;348.7;348.6;345.2;338.6;328.8;315.6;299.2;279.4;256.3;229.8;200.0"/>
+      <animate attributeName="cy" dur="4.8s" repeatCount="indefinite" begin="1.6s" values="116.0;118.6;122.0;125.9;130.4;135.3;140.5;145.9;151.5;157.1;162.7;168.2;173.4;178.3;182.7;186.7;190.0"/>
+      <animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" begin="1.6s" values="0;0.8;0.8;0" keyTimes="0;0.06;0.9;1"/>
+    </circle>
+    <circle r="1.8" fill="#c9d1d9" cx="282" cy="116" opacity="0">
+      <animate attributeName="cx" dur="4.8s" repeatCount="indefinite" begin="3.2s" values="282.0;301.1;316.9;329.7;339.2;345.6;348.7;348.6;345.2;338.6;328.8;315.6;299.2;279.4;256.3;229.8;200.0"/>
+      <animate attributeName="cy" dur="4.8s" repeatCount="indefinite" begin="3.2s" values="116.0;118.6;122.0;125.9;130.4;135.3;140.5;145.9;151.5;157.1;162.7;168.2;173.4;178.3;182.7;186.7;190.0"/>
+      <animate attributeName="opacity" dur="4.8s" repeatCount="indefinite" begin="3.2s" values="0;0.7;0.7;0" keyTimes="0;0.06;0.9;1"/>
+    </circle>
+  </g>
+
   <!-- Particles -->
   <text x="30" y="160" class="pt" xml:space="preserve">  $        .    *</text>
   <text x="20" y="172" class="pt" xml:space="preserve">      .        $</text>
 
-  <!-- Rover ASCII art -->
-  <text x="10" y="190" class="rv" xml:space="preserve">
-    <tspan x="10" dy="0">                             .----.</tspan>
-    <tspan x="10" dy="1.15em">                            / .''. \</tspan>
-    <tspan x="10" dy="1.15em">                             '----'</tspan>
-    <tspan x="10" dy="1.15em">                              |%%|</tspan>
+  <!-- Mastcam-Z: discrete pan/nod frames on the original head. Frame 0 matches the static art. -->
+  <g id="mastcam">
+    <text x="10" y="190" class="rv" xml:space="preserve" opacity="1">
+      <animate attributeName="opacity" dur="10s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.200000;1"/>
+      <tspan x="10" dy="0">                             .----.</tspan>
+      <tspan x="10" dy="1.15em">                            / .<tspan style="fill:#58a6ff" opacity="0.2">''<animate attributeName="opacity" dur="4s" repeatCount="indefinite" calcMode="discrete" values="0.15;1;0.15" keyTimes="0;0.82;1"/></tspan>. \</tspan>
+      <tspan x="10" dy="1.15em">                             '----'</tspan>
+    </text>
+    <text x="10" y="190" class="rv" xml:space="preserve" opacity="0">
+      <animate attributeName="opacity" dur="10s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.200000;0.400000;1"/>
+      <tspan x="10" dy="0">                           .----.</tspan>
+      <tspan x="10" dy="1.15em">                          / .<tspan style="fill:#58a6ff" opacity="0.2">''<animate attributeName="opacity" dur="4s" repeatCount="indefinite" calcMode="discrete" values="0.15;1;0.15" keyTimes="0;0.82;1"/></tspan>. \</tspan>
+      <tspan x="10" dy="1.15em">                           '----'</tspan>
+    </text>
+    <text x="10" y="194" class="rv" xml:space="preserve" opacity="0">
+      <animate attributeName="opacity" dur="10s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.400000;0.600000;1"/>
+      <tspan x="10" dy="0">                             .----.</tspan>
+      <tspan x="10" dy="1.15em">                            / .<tspan style="fill:#58a6ff" opacity="0.2">''<animate attributeName="opacity" dur="4s" repeatCount="indefinite" calcMode="discrete" values="0.15;1;0.15" keyTimes="0;0.82;1"/></tspan>. \</tspan>
+      <tspan x="10" dy="1.15em">                             '----'</tspan>
+    </text>
+    <text x="10" y="190" class="rv" xml:space="preserve" opacity="0">
+      <animate attributeName="opacity" dur="10s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.600000;0.800000;1"/>
+      <tspan x="10" dy="0">                               .----.</tspan>
+      <tspan x="10" dy="1.15em">                              / .<tspan style="fill:#58a6ff" opacity="0.2">''<animate attributeName="opacity" dur="4s" repeatCount="indefinite" calcMode="discrete" values="0.15;1;0.15" keyTimes="0;0.82;1"/></tspan>. \</tspan>
+      <tspan x="10" dy="1.15em">                               '----'</tspan>
+    </text>
+    <text x="10" y="186" class="rv" xml:space="preserve" opacity="0">
+      <animate attributeName="opacity" dur="10s" repeatCount="indefinite" calcMode="discrete" values="0;1;1" keyTimes="0;0.800000;1"/>
+      <tspan x="10" dy="0">                             .----.</tspan>
+      <tspan x="10" dy="1.15em">                            / .<tspan style="fill:#58a6ff" opacity="0.2">''<animate attributeName="opacity" dur="4s" repeatCount="indefinite" calcMode="discrete" values="0.15;1;0.15" keyTimes="0;0.82;1"/></tspan>. \</tspan>
+      <tspan x="10" dy="1.15em">                             '----'</tspan>
+    </text>
+  </g>
+
+  <!-- Rover body, unchanged ASCII from the neck through the chassis. -->
+  <text x="10" y="224.5" class="rv" xml:space="preserve">
+    <tspan x="10" dy="0">                              |%%|</tspan>
     <tspan x="10" dy="1.15em">                         _____|%%|______</tspan>
     <tspan x="10" dy="1.15em">                    ____/ .----------. \____</tspan>
     <tspan x="10" dy="1.15em">               ____/ .---'  MASTCAM-Z  '--. \____</tspan>
@@ -446,13 +504,88 @@
     <tspan x="10" dy="1.15em">     |@$@$@ | |%%%%|  |%| %$%$%$%$% |%|  |%%%%| |@$@$@|</tspan>
     <tspan x="10" dy="1.15em">      \ %$% | |%%%%|##|%| %$%$%$%$% |%|##|%%%%| | %$% /</tspan>
     <tspan x="10" dy="1.15em">       \____|_|____|##|__|___________|__|##|____|_|____/</tspan>
-    <tspan x="10" dy="1.15em">       /oOo\ /oOo\ /oOo\                /oOo\ /oOo\ /oOo\</tspan>
-    <tspan x="10" dy="1.15em">      |(@%@)|(@%@)|(@%@)|              |(@%@)|(@%@)|(@%@)|</tspan>
-    <tspan x="10" dy="1.15em">       \oOo/ \oOo/ \oOo/                \oOo/ \oOo/ \oOo/</tspan>
   </text>
 
-  <!-- Terrain -->
-  <text x="10" y="432" class="tr" xml:space="preserve">..:':..::''.::.':..::..''..::..''..::..''..::..''..::..''..::''..::..''</text>
+  <!-- Hazard lamps (green/red) and mast status light, painted on the existing glyphs. -->
+    <text y="224.5" font-family="Courier New, Courier, monospace" font-size="10" xml:space="preserve" style="white-space:pre"><tspan x="10" fill="none">                              |</tspan><tspan style="fill:#58a6ff" opacity="0.2">%%<animate attributeName="opacity" dur="1.8s" repeatCount="indefinite" values="0.15;0.95;0.15"/></tspan><tspan fill="none">|</tspan></text>
+    <text y="293.5" font-family="Courier New, Courier, monospace" font-size="10" xml:space="preserve" style="white-space:pre"><tspan x="10" fill="none">            | |    |</tspan><tspan style="fill:#3fb950" opacity="0.3">##<animate attributeName="opacity" dur="2.6s" repeatCount="indefinite" values="0.25;1;0.25"/></tspan><tspan fill="none">|  | %$%$%$%$% |  |</tspan><tspan style="fill:#f85149" opacity="0.25">##<animate attributeName="opacity" dur="2.2s" repeatCount="indefinite" calcMode="discrete" values="0.2;1;0.2;1;0.2" keyTimes="0;0.07;0.16;0.26;1"/></tspan><tspan fill="none">|    | |</tspan></text>
+    <text y="305" font-family="Courier New, Courier, monospace" font-size="10" xml:space="preserve" style="white-space:pre"><tspan x="10" fill="none">            | |    |</tspan><tspan style="fill:#3fb950" opacity="0.3">##<animate attributeName="opacity" dur="2.6s" repeatCount="indefinite" values="0.25;1;0.25"/></tspan><tspan fill="none">|  | %$%$%$%$% |  |</tspan><tspan style="fill:#f85149" opacity="0.25">##<animate attributeName="opacity" dur="2.2s" repeatCount="indefinite" calcMode="discrete" values="0.2;1;0.2;1;0.2" keyTimes="0;0.07;0.16;0.26;1"/></tspan><tspan fill="none">|    | |</tspan></text>
+
+  <!-- Wheels: four glyph phases, same layout as the original /oOo\ bogies. -->
+  <g id="wheels">
+    <g opacity="1">
+      <animate attributeName="opacity" dur="3.2s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.250000;1"/>
+    <text x="10" y="385.5" class="rv" xml:space="preserve">       /oOo\ /oOo\ /oOo\                /oOo\ /oOo\ /oOo\</text>
+    <text x="10" y="397" class="rv" xml:space="preserve">      |(@%@)|(@%@)|(@%@)|              |(@%@)|(@%@)|(@%@)|</text>
+    <text x="10" y="408.5" class="rv" xml:space="preserve">       \oOo/ \oOo/ \oOo/                \oOo/ \oOo/ \oOo/</text>
+    </g>
+    <g opacity="0">
+      <animate attributeName="opacity" dur="3.2s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.250000;0.500000;1"/>
+    <text x="10" y="385.5" class="rv" xml:space="preserve">       /OoO\ /OoO\ /OoO\                /OoO\ /OoO\ /OoO\</text>
+    <text x="10" y="397" class="rv" xml:space="preserve">      |(%@%)|(%@%)|(%@%)|              |(%@%)|(%@%)|(%@%)|</text>
+    <text x="10" y="408.5" class="rv" xml:space="preserve">       \OoO/ \OoO/ \OoO/                \OoO/ \OoO/ \OoO/</text>
+    </g>
+    <g opacity="0">
+      <animate attributeName="opacity" dur="3.2s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.500000;0.750000;1"/>
+    <text x="10" y="385.5" class="rv" xml:space="preserve">       /o@o\ /o@o\ /o@o\                /o@o\ /o@o\ /o@o\</text>
+    <text x="10" y="397" class="rv" xml:space="preserve">      |(@o@)|(@o@)|(@o@)|              |(@o@)|(@o@)|(@o@)|</text>
+    <text x="10" y="408.5" class="rv" xml:space="preserve">       \o@o/ \o@o/ \o@o/                \o@o/ \o@o/ \o@o/</text>
+    </g>
+    <g opacity="0">
+      <animate attributeName="opacity" dur="3.2s" repeatCount="indefinite" calcMode="discrete" values="0;1;1" keyTimes="0;0.750000;1"/>
+    <text x="10" y="385.5" class="rv" xml:space="preserve">       /@o@\ /@o@\ /@o@\                /@o@\ /@o@\ /@o@\</text>
+    <text x="10" y="397" class="rv" xml:space="preserve">      |(o%o)|(o%o)|(o%o)|              |(o%o)|(o%o)|(o%o)|</text>
+    <text x="10" y="408.5" class="rv" xml:space="preserve">       \@o@/ \@o@/ \@o@/                \@o@/ \@o@/ \@o@/</text>
+    </g>
+  </g>
+
+  <!-- Terrain crawls a couple of columns; dust motes lift off the wheel line. -->
+  <g id="terrain">
+    <g opacity="1">
+      <animate attributeName="opacity" dur="6.6s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.333333;1"/>
+      <text x="10" y="432" class="tr" xml:space="preserve">..:':..::''.::.':..::..''..::..''..::..''..::..''..::..''..::''..::..''</text>
+    </g>
+    <g opacity="0">
+      <animate attributeName="opacity" dur="6.6s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.333333;0.666667;1"/>
+      <text x="10" y="432" class="tr" xml:space="preserve">:':..::''.::.':..::..''..::..''..::..''..::..''..::..''..::''..::..''..</text>
+    </g>
+    <g opacity="0">
+      <animate attributeName="opacity" dur="6.6s" repeatCount="indefinite" calcMode="discrete" values="0;1;1" keyTimes="0;0.666667;1"/>
+      <text x="10" y="432" class="tr" xml:space="preserve">:..::''.::.':..::..''..::..''..::..''..::..''..::..''..::''..::..''..:'</text>
+    </g>
+  </g>
+  <g id="regolith">
+    <g opacity="0" style="fill:#8b949e">
+      <animate attributeName="opacity" dur="3.6s" begin="0s" repeatCount="indefinite" values="0;0.65;0.45;0" keyTimes="0;0.2;0.55;1"/>
+      <animateTransform attributeName="transform" type="translate" dur="3.6s" begin="0s" repeatCount="indefinite" values="64,434; 56,418; 50,406"/>
+      <text font-family="Courier New, Courier, monospace" font-size="8">.</text>
+    </g>
+    <g opacity="0" style="fill:#6e7681">
+      <animate attributeName="opacity" dur="4.2s" begin="0.7s" repeatCount="indefinite" values="0;0.65;0.45;0" keyTimes="0;0.2;0.55;1"/>
+      <animateTransform attributeName="transform" type="translate" dur="4.2s" begin="0.7s" repeatCount="indefinite" values="102,436; 94,420; 88,408"/>
+      <text font-family="Courier New, Courier, monospace" font-size="8">:</text>
+    </g>
+    <g opacity="0" style="fill:#8b949e">
+      <animate attributeName="opacity" dur="3.3s" begin="1.5s" repeatCount="indefinite" values="0;0.65;0.45;0" keyTimes="0;0.2;0.55;1"/>
+      <animateTransform attributeName="transform" type="translate" dur="3.3s" begin="1.5s" repeatCount="indefinite" values="138,433; 130,417; 122,405"/>
+      <text font-family="Courier New, Courier, monospace" font-size="8">'</text>
+    </g>
+    <g opacity="0" style="fill:#6e7681">
+      <animate attributeName="opacity" dur="3.9s" begin="0.4s" repeatCount="indefinite" values="0;0.65;0.45;0" keyTimes="0;0.2;0.55;1"/>
+      <animateTransform attributeName="transform" type="translate" dur="3.9s" begin="0.4s" repeatCount="indefinite" values="260,435; 252,419; 246,407"/>
+      <text font-family="Courier New, Courier, monospace" font-size="8">.</text>
+    </g>
+    <g opacity="0" style="fill:#8b949e">
+      <animate attributeName="opacity" dur="4.4s" begin="1.3s" repeatCount="indefinite" values="0;0.65;0.45;0" keyTimes="0;0.2;0.55;1"/>
+      <animateTransform attributeName="transform" type="translate" dur="4.4s" begin="1.3s" repeatCount="indefinite" values="300,434; 292,418; 284,406"/>
+      <text font-family="Courier New, Courier, monospace" font-size="8">:</text>
+    </g>
+    <g opacity="0" style="fill:#484f58">
+      <animate attributeName="opacity" dur="3.5s" begin="2.1s" repeatCount="indefinite" values="0;0.65;0.45;0" keyTimes="0;0.2;0.55;1"/>
+      <animateTransform attributeName="transform" type="translate" dur="3.5s" begin="2.1s" repeatCount="indefinite" values="336,436; 328,420; 320,408"/>
+      <text font-family="Courier New, Courier, monospace" font-size="8">'</text>
+    </g>
+  </g>
 
   <!-- Right panel -->
   <text x="420" y="50" class="pn" xml:space="preserve"><tspan x="420" dy="0" class="t">arnav@perseverance</tspan><tspan class="d"> ────────────────────────────────────</tspan>
