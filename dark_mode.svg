@@ -1,49 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="490" viewBox="0 0 960 490">
-  <title>Earth / Mars telemetry</title>
-  <desc>Left half is Earth in cool space blues with a spinning ASCII globe. Right half is Mars in dust and rust, with the Perseverance rover on the surface. The Deep Space Network arc is the only bridge. GitHub stats sit on one shared console.</desc>
+  <title>Earth / Mars</title>
+  <desc>Earth on the left, Mars on the right. A single Deep Space Network arc joins them. Live counts sit on a thin strip along the bottom.</desc>
   <defs>
     <linearGradient id="earth-sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#050910"/>
-      <stop offset="42%" stop-color="#0a1c2e"/>
-      <stop offset="78%" stop-color="#0e3344"/>
-      <stop offset="100%" stop-color="#12485a"/>
+      <stop offset="0%" stop-color="#070b12"/>
+      <stop offset="58%" stop-color="#0c1a28"/>
+      <stop offset="100%" stop-color="#102838"/>
     </linearGradient>
     <linearGradient id="mars-sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#160806"/>
-      <stop offset="40%" stop-color="#2c110c"/>
-      <stop offset="74%" stop-color="#3e1b11"/>
-      <stop offset="100%" stop-color="#512616"/>
+      <stop offset="0%" stop-color="#110806"/>
+      <stop offset="62%" stop-color="#24110c"/>
+      <stop offset="100%" stop-color="#34180f"/>
     </linearGradient>
     <radialGradient id="earth-glow" cx="240" cy="166" r="150" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#1a7ea8" stop-opacity="0.32"/>
-      <stop offset="50%" stop-color="#0c4a66" stop-opacity="0.10"/>
-      <stop offset="100%" stop-color="#0c4a66" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="mars-haze" cx="760" cy="368" r="210" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#d06a32" stop-opacity="0.34"/>
-      <stop offset="68%" stop-color="#8a3e1c" stop-opacity="0.06"/>
-      <stop offset="100%" stop-color="#8a3e1c" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#1a6e90" stop-opacity="0.16"/>
+      <stop offset="55%" stop-color="#0c3a50" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#0c3a50" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="dsn-grad" gradientUnits="userSpaceOnUse" x1="308" y1="212" x2="720" y2="161">
-      <stop offset="0%" stop-color="#9af3ff"/>
-      <stop offset="38%" stop-color="#f4fbff"/>
-      <stop offset="100%" stop-color="#ffd59a"/>
+      <stop offset="0%" stop-color="#8ecfda"/>
+      <stop offset="48%" stop-color="#e7eef2"/>
+      <stop offset="100%" stop-color="#e2b48a"/>
     </linearGradient>
-    <linearGradient id="console-edge" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#67e0ea"/>
-      <stop offset="47%" stop-color="#67e0ea"/>
-      <stop offset="53%" stop-color="#f0a15a"/>
-      <stop offset="100%" stop-color="#f0a15a"/>
+    <linearGradient id="mars-fade-grad" gradientUnits="userSpaceOnUse" x1="390" y1="0" x2="545" y2="0">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="1"/>
     </linearGradient>
+    <mask id="mars-fade" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="960" height="414">
+      <rect x="390" y="0" width="570" height="414" fill="url(#mars-fade-grad)"/>
+    </mask>
     <clipPath id="clip-card">
       <rect width="960" height="490" rx="10" ry="10"/>
-    </clipPath>
-    <clipPath id="clip-earth">
-      <rect x="0" y="0" width="480" height="386"/>
-    </clipPath>
-    <clipPath id="clip-mars">
-      <rect x="480" y="0" width="480" height="386"/>
     </clipPath>
   </defs>
   <style>
@@ -51,7 +39,7 @@
     .pn { font-family: "Courier New", Courier, monospace; font-size: 12.5px; fill: #d5dee8; white-space: pre; }
     .sm { font-family: "Courier New", Courier, monospace; font-size: 11.5px; fill: #c9d1d9; white-space: pre; }
     .xs { font-family: "Courier New", Courier, monospace; font-size: 10px; fill: #9aa6b2; white-space: pre; }
-    .tr { font-family: "Courier New", Courier, monospace; font-size: 9px; fill: #e0b088; white-space: pre; }
+    .tr { font-family: "Courier New", Courier, monospace; font-size: 9px; fill: #c48962; white-space: pre; }
     .t  { fill: #58a6ff; font-weight: bold; }
     .d  { fill: #6e7681; }
     .m  { fill: #e3b341; }
@@ -67,71 +55,43 @@
     .eg { fill: #8b949e; }
     .en { fill: #6e7681; }
     .es { fill: #c9d1d9; }
-    .tag-e { font-family: "Courier New", Courier, monospace; font-size: 13px; fill: #8fd6ea; letter-spacing: 0.34em; font-weight: bold; }
-    .tag-m { font-family: "Courier New", Courier, monospace; font-size: 13px; fill: #f0b27a; letter-spacing: 0.34em; font-weight: bold; }
-    .sub-e { font-family: "Courier New", Courier, monospace; font-size: 10px; fill: #7eb4c6; }
-    .sub-m { font-family: "Courier New", Courier, monospace; font-size: 10px; fill: #e0b088; }
-    .host { fill: #f0b27a; font-weight: bold; }
-    .mars .rv { fill: #f0c9a8; }
-    .mars .es { fill: #ffe7d2; }
-    .mars .en { fill: #e7c3a2; }
-    .mars .h  { fill: #fff6d0; }
-    .mars .s  { fill: #e7f7a8; }
-    .mars .r  { fill: #ff7a55; }
+    .tag-e { font-family: "Courier New", Courier, monospace; font-size: 11px; fill: #6ea8b6; letter-spacing: 0.28em; }
+    .tag-m { font-family: "Courier New", Courier, monospace; font-size: 11px; fill: #c48b62; letter-spacing: 0.28em; }
+    .hint { font-family: "Courier New", Courier, monospace; font-size: 9px; fill: #8fa0ab; }
+    .k { font-family: "Courier New", Courier, monospace; font-size: 9px; fill: #66707c; letter-spacing: 0.14em; }
+    .num { font-family: "Courier New", Courier, monospace; font-size: 13px; fill: #dce6ee; }
+    .w { font-family: "Courier New", Courier, monospace; font-size: 10px; fill: #66707c; }
+    .sub { font-family: "Courier New", Courier, monospace; font-size: 9px; fill: #5c6670; }
+    .who { fill: #8b97a3; }
+    .mars .rv { fill: #e7c4a6; }
+    .mars .es { fill: #f3ddc8; }
+    .mars .en { fill: #c9956e; }
+    .mars .h  { fill: #f0ddb0; }
+    .mars .s  { fill: #d5e6a4; }
+    .mars .r  { fill: #e8886a; }
   </style>
   <g clip-path="url(#clip-card)">
-    <g clip-path="url(#clip-earth)">
-      <rect x="0" y="0" width="480" height="386" fill="url(#earth-sky)"/>
-      <circle cx="240" cy="166" r="148" fill="url(#earth-glow)"/>
-      <ellipse cx="220" cy="410" rx="300" ry="110" fill="#14607a" opacity="0.20"/>
-      <circle cx="28" cy="64" r="1.05" fill="#d7ecf8" opacity="0.55"><animate attributeName="opacity" values="0.17;0.85;0.17" dur="3.8s" repeatCount="indefinite"/></circle>
-      <circle cx="62" cy="108" r="0.7" fill="#c5dced" opacity="0.32"></circle>
-      <circle cx="44" cy="168" r="0.85" fill="#e7f3fb" opacity="0.28"></circle>
-      <circle cx="96" cy="214" r="0.6" fill="#b9d4e4" opacity="0.34"></circle>
-      <circle cx="30" cy="248" r="1.15" fill="#d7ecf8" opacity="0.42"><animate attributeName="opacity" values="0.13;0.82;0.13" dur="3.8s" repeatCount="indefinite"/></circle>
-      <circle cx="84" cy="300" r="0.7" fill="#c5dced" opacity="0.24"></circle>
-      <circle cx="128" cy="338" r="0.8" fill="#e7f3fb" opacity="0.30"></circle>
-      <circle cx="196" cy="318" r="0.55" fill="#b9d4e4" opacity="0.22"></circle>
-      <circle cx="286" cy="308" r="0.9" fill="#d7ecf8" opacity="0.28"></circle>
-      <circle cx="348" cy="276" r="0.65" fill="#c5dced" opacity="0.22"></circle>
-      <circle cx="404" cy="236" r="0.85" fill="#e7f3fb" opacity="0.32"></circle>
-      <circle cx="452" cy="168" r="1.0" fill="#d7ecf8" opacity="0.36"><animate attributeName="opacity" values="0.11;0.76;0.11" dur="6.2s" repeatCount="indefinite"/></circle>
-      <circle cx="458" cy="92" r="0.6" fill="#c5dced" opacity="0.26"></circle>
-      <circle cx="412" cy="46" r="0.8" fill="#e7f3fb" opacity="0.30"></circle>
-      <circle cx="348" cy="26" r="0.5" fill="#b9d4e4" opacity="0.20"></circle>
-      <circle cx="156" cy="34" r="0.75" fill="#d7ecf8" opacity="0.30"><animate attributeName="opacity" values="0.09;0.70;0.09" dur="6.2s" repeatCount="indefinite"/></circle>
-      <circle cx="118" cy="352" r="0.55" fill="#c5dced" opacity="0.18"></circle>
-      <circle cx="430" cy="336" r="0.9" fill="#e7f3fb" opacity="0.26"></circle>
-      <circle cx="22" cy="120" r="0.45" fill="#b9d4e4" opacity="0.20"></circle>
-      <circle cx="188" cy="348" r="0.5" fill="#d7ecf8" opacity="0.16"></circle>
-      <text x="28" y="30" class="tag-e">EARTH</text>
-      <text x="28" y="46" class="sub-e">goldstone · deep space network</text>
+    <rect x="0" y="0" width="960" height="414" fill="url(#earth-sky)"/>
+    <circle cx="240" cy="166" r="140" fill="url(#earth-glow)"/>
+    <circle cx="36" cy="78" r="0.8" fill="#d5e6f0" opacity="0.35"/>
+    <circle cx="92" cy="46" r="0.5" fill="#c5d8e4" opacity="0.22"/>
+    <circle cx="48" cy="210" r="0.6" fill="#d5e6f0" opacity="0.2"/>
+    <circle cx="70" cy="300" r="0.7" fill="#c5d8e4" opacity="0.18"/>
+    <circle cx="150" cy="36" r="0.45" fill="#d5e6f0" opacity="0.2"/>
+    <circle cx="360" cy="52" r="0.5" fill="#c5d8e4" opacity="0.18"/>
+    <text x="32" y="36" class="tag-e">earth</text>
+    <g mask="url(#mars-fade)">
+      <rect x="0" y="0" width="960" height="414" fill="url(#mars-sky)"/>
+      <circle cx="900" cy="70" r="16" fill="#e8b07a" opacity="0.05"/>
+      <circle cx="900" cy="70" r="5.5" fill="#e8b07a" opacity="0.32"/>
+      <circle cx="700" cy="48" r="0.45" fill="#e7cbb4" opacity="0.16"/>
+      <circle cx="820" cy="36" r="0.5" fill="#e7cbb4" opacity="0.12"/>
+      <circle cx="940" cy="96" r="0.4" fill="#e7cbb4" opacity="0.14"/>
+      <path d="M520 414 C 640 410, 720 386, 840 396 C 910 402, 940 388, 960 392 L 960 414 Z" fill="#5c301c" opacity="0.5"/>
+      <text x="928" y="36" text-anchor="end" class="tag-m">mars</text>
     </g>
-    <g clip-path="url(#clip-mars)">
-      <rect x="480" y="0" width="480" height="386" fill="url(#mars-sky)"/>
-      <circle cx="760" cy="360" r="200" fill="url(#mars-haze)"/>
-      <circle cx="898" cy="74" r="28" fill="#ffb067" opacity="0.08"/>
-      <circle cx="898" cy="74" r="11" fill="#ffc089" opacity="0.55">
-        <animate attributeName="opacity" values="0.40;0.62;0.40" dur="8s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="524" cy="34" r="0.6" fill="#f0d2b4" opacity="0.20"><animate attributeName="opacity" values="0.06;0.60;0.06" dur="3.8s" repeatCount="indefinite"/></circle>
-      <circle cx="588" cy="26" r="0.45" fill="#e7c4a4" opacity="0.14"></circle>
-      <circle cx="648" cy="46" r="0.7" fill="#f6ddc8" opacity="0.16"></circle>
-      <circle cx="724" cy="28" r="0.5" fill="#e7c4a4" opacity="0.12"></circle>
-      <circle cx="790" cy="40" r="0.65" fill="#f0d2b4" opacity="0.15"><animate attributeName="opacity" values="0.04;0.55;0.04" dur="3.8s" repeatCount="indefinite"/></circle>
-      <circle cx="848" cy="24" r="0.45" fill="#f6ddc8" opacity="0.10"></circle>
-      <circle cx="928" cy="58" r="0.7" fill="#f0d2b4" opacity="0.14"><animate attributeName="opacity" values="0.04;0.54;0.04" dur="5.4s" repeatCount="indefinite"/></circle>
-      <circle cx="944" cy="118" r="0.5" fill="#e7c4a4" opacity="0.10"></circle>
-      <circle cx="760" cy="56" r="0.4" fill="#f6ddc8" opacity="0.10"></circle>
-      <circle cx="556" cy="72" r="0.35" fill="#f0d2b4" opacity="0.10"></circle>
-      <path d="M488 386 C 590 386, 660 354, 770 364 C 880 374, 930 346, 960 358 L 960 386 Z" fill="#6e341c" opacity="0.95"/>
-      <path d="M500 386 C 650 386, 740 366, 870 374 C 930 380, 960 368, 960 386 Z" fill="#c47848" opacity="0.50"/>
-      <ellipse cx="512" cy="374" rx="11" ry="4" fill="#2c140e" opacity="0.9"/>
-      <ellipse cx="938" cy="372" rx="15" ry="5" fill="#2a130c" opacity="0.85"/>
-      <text x="508" y="30" class="tag-m">MARS</text>
-      <text x="508" y="46" class="sub-m">perseverance · jezero crater</text>
-    </g>
-    <g id="earth" transform="translate(46,70)">
+
+<g id="earth" transform="translate(46,70)">
         <circle cx="193.6" cy="95.5" r="83.0" fill="none" stroke="#58a6ff" stroke-width="0.7" opacity="0.22"/>
         <circle cx="193.6" cy="95.5" r="85.6" fill="none" stroke="#8b949e" stroke-width="0.6" stroke-dasharray="1.5 4.5" opacity="0.28">
           <animate attributeName="stroke-dashoffset" from="0" to="-36" dur="12s" repeatCount="indefinite"/>
@@ -506,40 +466,25 @@
         </g>
       </g>
 
-    <text x="240" y="286" text-anchor="middle" class="sub-e">35.4°N · 116.9°W</text>
+
+    <text x="490" y="76" text-anchor="middle" class="hint">1.5 au · 12.5 min</text>
     <g id="dsn-link">
-      <path d="M 308.4 211.9 C 420.0 80.0, 620.0 70.0, 720.0 161.0" fill="none" stroke="url(#dsn-grad)" stroke-width="10" stroke-linecap="round" opacity="0.22">
-        <animate attributeName="opacity" values="0.12;0.30;0.12" dur="5.2s" repeatCount="indefinite"/>
+      <path d="M 308.4 211.9 C 420.0 80.0, 620.0 70.0, 720.0 161.0" fill="none" stroke="url(#dsn-grad)" stroke-width="5" stroke-linecap="round" opacity="0.10"/>
+      <path d="M 308.4 211.9 C 420.0 80.0, 620.0 70.0, 720.0 161.0" fill="none" stroke="url(#dsn-grad)" stroke-width="1.15" stroke-linecap="round" opacity="0.72"/>
+      <path d="M 308.4 211.9 C 420.0 80.0, 620.0 70.0, 720.0 161.0" fill="none" stroke="#e7eef2" stroke-width="1.15" stroke-linecap="round" stroke-dasharray="2 18" opacity="0.45">
+        <animate attributeName="stroke-dashoffset" from="0" to="-80" dur="6s" repeatCount="indefinite"/>
       </path>
-      <path d="M 308.4 211.9 C 420.0 80.0, 620.0 70.0, 720.0 161.0" fill="none" stroke="url(#dsn-grad)" stroke-width="1.5" stroke-linecap="round" opacity="0.42"/>
-      <path d="M 308.4 211.9 C 420.0 80.0, 620.0 70.0, 720.0 161.0" fill="none" stroke="#f7fbff" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="14 18" opacity="0.95">
-        <animate attributeName="stroke-dashoffset" from="0" to="-128" dur="2.4s" repeatCount="indefinite"/>
-      </path>
-      <circle cx="308.4" cy="211.9" r="2.6" fill="#8eebff">
-        <animate attributeName="opacity" values="0.35;1;0.35" dur="4.4s" repeatCount="indefinite"/>
+      <circle cx="308.4" cy="211.9" r="1.6" fill="#9fd4e2" opacity="0.7">
+        <animate attributeName="opacity" values="0.35;0.75;0.35" dur="6s" repeatCount="indefinite"/>
       </circle>
-      <circle r="7" fill="#f7fbff" cx="308.4" cy="211.9" opacity="0">
-        <animate attributeName="cx" dur="6.2s" repeatCount="indefinite" values="308.4;330.3;354.0;379.3;405.7;433.2;461.3;489.9;518.5;547.1;575.2;602.7;629.2;654.4;678.2;700.1;720.0"/>
-        <animate attributeName="cy" dur="6.2s" repeatCount="indefinite" values="211.9;188.6;168.1;150.4;135.5;123.3;113.8;107.0;102.9;101.3;102.3;105.9;112.0;120.6;131.7;145.1;161.0"/>
-        <animate attributeName="opacity" dur="6.2s" repeatCount="indefinite" values="0;0.28;0.28;0" keyTimes="0;0.06;0.9;1"/>
-      </circle>
-      <circle r="3.4" fill="#f7fbff" cx="308.4" cy="211.9" opacity="0">
-        <animate attributeName="cx" dur="6.2s" repeatCount="indefinite" values="308.4;330.3;354.0;379.3;405.7;433.2;461.3;489.9;518.5;547.1;575.2;602.7;629.2;654.4;678.2;700.1;720.0"/>
-        <animate attributeName="cy" dur="6.2s" repeatCount="indefinite" values="211.9;188.6;168.1;150.4;135.5;123.3;113.8;107.0;102.9;101.3;102.3;105.9;112.0;120.6;131.7;145.1;161.0"/>
-        <animate attributeName="opacity" dur="6.2s" repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.06;0.9;1"/>
-      </circle>
-      <circle r="6.2" fill="#ffd7a8" cx="308.4" cy="211.9" opacity="0">
-        <animate attributeName="cx" dur="6.2s" repeatCount="indefinite" begin="3.1s" values="308.4;330.3;354.0;379.3;405.7;433.2;461.3;489.9;518.5;547.1;575.2;602.7;629.2;654.4;678.2;700.1;720.0"/>
-        <animate attributeName="cy" dur="6.2s" repeatCount="indefinite" begin="3.1s" values="211.9;188.6;168.1;150.4;135.5;123.3;113.8;107.0;102.9;101.3;102.3;105.9;112.0;120.6;131.7;145.1;161.0"/>
-        <animate attributeName="opacity" dur="6.2s" repeatCount="indefinite" begin="3.1s" values="0;0.28;0.28;0" keyTimes="0;0.06;0.9;1"/>
-      </circle>
-      <circle r="3.1" fill="#ffd7a8" cx="308.4" cy="211.9" opacity="0">
-        <animate attributeName="cx" dur="6.2s" repeatCount="indefinite" begin="3.1s" values="308.4;330.3;354.0;379.3;405.7;433.2;461.3;489.9;518.5;547.1;575.2;602.7;629.2;654.4;678.2;700.1;720.0"/>
-        <animate attributeName="cy" dur="6.2s" repeatCount="indefinite" begin="3.1s" values="211.9;188.6;168.1;150.4;135.5;123.3;113.8;107.0;102.9;101.3;102.3;105.9;112.0;120.6;131.7;145.1;161.0"/>
-        <animate attributeName="opacity" dur="6.2s" repeatCount="indefinite" begin="3.1s" values="0;0.95;0.95;0" keyTimes="0;0.06;0.9;1"/>
+      <circle r="2.7" fill="#f4f7f8" cx="308.4" cy="211.9" opacity="0">
+        <animate attributeName="cx" dur="12s" repeatCount="indefinite" values="308.4;330.3;354.0;379.3;405.7;433.2;461.3;489.9;518.5;547.1;575.2;602.7;629.2;654.4;678.2;700.1;720.0"/>
+        <animate attributeName="cy" dur="12s" repeatCount="indefinite" values="211.9;188.6;168.1;150.4;135.5;123.3;113.8;107.0;102.9;101.3;102.3;105.9;112.0;120.6;131.7;145.1;161.0"/>
+        <animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0.95;0.95;0" keyTimes="0;0.04;0.94;1"/>
       </circle>
     </g>
-    <g id="perseverance" class="mars" transform="translate(542,-34)">
+
+<g id="perseverance" class="mars" transform="translate(542,-34)">
 <g id="mastcam">
     <g opacity="1">
       <animate attributeName="opacity" dur="12s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.250000;1"/>
@@ -634,7 +579,7 @@
   </g>
 <g id="wheels">
     <g opacity="1">
-      <animate attributeName="opacity" dur="6.4s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.250000;1"/>
+      <animate attributeName="opacity" dur="6s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.250000;1"/>
       <text y="366.5" class="rv" xml:space="preserve">
         <tspan x="16" dy="0" class="en">     .--.    .--.    .--.        .--.    .--.    .--.</tspan>
         <tspan x="16" dy="1.15em" class="en">    /||||\  /||||\  /||||\      /||||\  /||||\  /||||\</tspan>
@@ -643,7 +588,7 @@
       </text>
     </g>
     <g opacity="0">
-      <animate attributeName="opacity" dur="6.4s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.250000;0.500000;1"/>
+      <animate attributeName="opacity" dur="6s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.250000;0.500000;1"/>
       <text y="366.5" class="rv" xml:space="preserve">
         <tspan x="16" dy="0" class="en">     .--.    .--.    .--.        .--.    .--.    .--.</tspan>
         <tspan x="16" dy="1.15em" class="en">    //|||\  //|||\  //|||\      //|||\  //|||\  //|||\</tspan>
@@ -652,7 +597,7 @@
       </text>
     </g>
     <g opacity="0">
-      <animate attributeName="opacity" dur="6.4s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.500000;0.750000;1"/>
+      <animate attributeName="opacity" dur="6s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.500000;0.750000;1"/>
       <text y="366.5" class="rv" xml:space="preserve">
         <tspan x="16" dy="0" class="en">     .--.    .--.    .--.        .--.    .--.    .--.</tspan>
         <tspan x="16" dy="1.15em" class="en">    /|/||\  /|/||\  /|/||\      /|/||\  /|/||\  /|/||\</tspan>
@@ -661,7 +606,7 @@
       </text>
     </g>
     <g opacity="0">
-      <animate attributeName="opacity" dur="6.4s" repeatCount="indefinite" calcMode="discrete" values="0;1;1" keyTimes="0;0.750000;1"/>
+      <animate attributeName="opacity" dur="6s" repeatCount="indefinite" calcMode="discrete" values="0;1;1" keyTimes="0;0.750000;1"/>
       <text y="366.5" class="rv" xml:space="preserve">
         <tspan x="16" dy="0" class="en">     .--.    .--.    .--.        .--.    .--.    .--.</tspan>
         <tspan x="16" dy="1.15em" class="en">    /||/|\  /||/|\  /||/|\      /||/|\  /||/|\  /||/|\</tspan>
@@ -671,65 +616,24 @@
     </g>
   </g>
     </g>
-    <!-- Receiver lamp on the mast head, where the arc arrives. -->
-    <circle cx="720" cy="158" r="6" fill="#ffd59a" opacity="0.22">
-      <animate attributeName="opacity" values="0.08;0.34;0.08" dur="2.4s" repeatCount="indefinite"/>
+
+    <circle cx="720" cy="158" r="1.7" fill="#f0dcc4" opacity="0.75">
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="6s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="720" cy="158" r="2.5" fill="#fff1d2">
-      <animate attributeName="opacity" values="0.45;1;0.45" dur="2.4s" repeatCount="indefinite"/>
-    </circle>
-    <g id="terrain">
-      <g opacity="1">
-        <animate attributeName="opacity" dur="9s" repeatCount="indefinite" calcMode="discrete" values="1;0;0" keyTimes="0;0.333333;1"/>
-        <text x="500" y="372" class="tr" xml:space="preserve">~^~~.''~~^~..~~''^~~..~^~~.''~~^~..~~''^~~..~^~.''~~^~~..~~''^~..~^~~</text>
-      </g>
-      <g opacity="0">
-        <animate attributeName="opacity" dur="9s" repeatCount="indefinite" calcMode="discrete" values="0;1;0;0" keyTimes="0;0.333333;0.666667;1"/>
-        <text x="500" y="372" class="tr" xml:space="preserve">^~~.''~~^~..~~''^~~..~^~~.''~~^~..~~''^~~..~^~.''~~^~~..~~''^~..~^~~.</text>
-      </g>
-      <g opacity="0">
-        <animate attributeName="opacity" dur="9s" repeatCount="indefinite" calcMode="discrete" values="0;1;1" keyTimes="0;0.666667;1"/>
-        <text x="500" y="372" class="tr" xml:space="preserve">~~.''~~^~..~~''^~~..~^~~.''~~^~..~~''^~~..~^~.''~~^~~..~~''^~..~^~~.'</text>
-      </g>
-    </g>
-    <g id="regolith">
-      <g opacity="0" fill="#f0d2b4">
-        <animate attributeName="opacity" dur="4.2s" begin="0s" repeatCount="indefinite" values="0;0.55;0.25;0" keyTimes="0;0.18;0.5;1"/>
-        <animateTransform attributeName="transform" type="translate" dur="4.2s" begin="0s" repeatCount="indefinite" values="612,370; 604,354; 600,342"/>
-        <text font-family="Courier New, Courier, monospace" font-size="8">.</text>
-      </g>
-      <g opacity="0" fill="#e0b088">
-        <animate attributeName="opacity" dur="4.8s" begin="0.8s" repeatCount="indefinite" values="0;0.5;0.22;0" keyTimes="0;0.18;0.5;1"/>
-        <animateTransform attributeName="transform" type="translate" dur="4.8s" begin="0.8s" repeatCount="indefinite" values="690,372; 682,356; 678,344"/>
-        <text font-family="Courier New, Courier, monospace" font-size="8">:</text>
-      </g>
-      <g opacity="0" fill="#f0d2b4">
-        <animate attributeName="opacity" dur="3.9s" begin="1.6s" repeatCount="indefinite" values="0;0.5;0.2;0" keyTimes="0;0.18;0.5;1"/>
-        <animateTransform attributeName="transform" type="translate" dur="3.9s" begin="1.6s" repeatCount="indefinite" values="762,370; 754,354; 750,342"/>
-        <text font-family="Courier New, Courier, monospace" font-size="8">.</text>
-      </g>
-      <g opacity="0" fill="#e7c4a4">
-        <animate attributeName="opacity" dur="5.1s" begin="0.4s" repeatCount="indefinite" values="0;0.48;0.2;0" keyTimes="0;0.18;0.5;1"/>
-        <animateTransform attributeName="transform" type="translate" dur="5.1s" begin="0.4s" repeatCount="indefinite" values="834,372; 826,356; 822,344"/>
-        <text font-family="Courier New, Courier, monospace" font-size="8">'</text>
-      </g>
-    </g>
-    <rect x="0" y="378" width="960" height="112" fill="#090c10"/>
-    <rect x="0" y="378" width="960" height="2" fill="url(#console-edge)"/>
-    <text x="24" y="400" class="pn" xml:space="preserve"><tspan class="s">arnav</tspan><tspan class="d">@</tspan><tspan class="host">perseverance</tspan><tspan class="d">:~$</tspan></text>
-    <rect x="188" y="388" width="8" height="13" fill="#3fb950">
-      <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.45;0.5;1" dur="1.15s" repeatCount="indefinite" calcMode="discrete"/>
-    </rect>
-    <text x="228" y="400" class="sm"><tspan class="d">Dartmouth College · Millan Lab</tspan></text>
-    <text x="520" y="400" class="sm"><tspan class="m">site </tspan><tspan>Jezero Crater, Mars</tspan></text>
-    <text x="936" y="400" text-anchor="end" class="sm"><tspan class="m">sol </tspan><tspan id="sol_data" class="h">1,992</tspan></text>
-    <text x="24" y="420" class="sm"><tspan class="m">status </tspan><tspan>Active, Mission-Critical</tspan></text>
-    <text x="360" y="420" class="sm"><tspan class="m">target </tspan><tspan>Ancient Delta</tspan></text>
-    <text x="580" y="420" class="sm"><tspan class="m">stream </tspan><tspan>Deep Space Network</tspan></text>
-    <text x="24" y="442" class="sm" xml:space="preserve"><tspan class="gh">github  </tspan><tspan class="m">repos </tspan><tspan id="repo_data" class="h">12</tspan><tspan class="d">    contributed </tspan><tspan id="contributed_data" class="h">23</tspan><tspan class="d">    stars </tspan><tspan id="star_data" class="h">0</tspan></text>
-    <text x="936" y="442" text-anchor="end" class="sm" xml:space="preserve"><tspan class="m">commits </tspan><tspan id="commit_data" class="h">149</tspan><tspan class="d">    followers </tspan><tspan id="follower_data" class="h">7</tspan></text>
-    <text x="24" y="464" class="sm" xml:space="preserve"><tspan class="m">lines </tspan><tspan id="loc_data" class="h">3,663,063</tspan><tspan class="d">  ( </tspan><tspan id="loc_add" class="a">5,216,662++</tspan><tspan class="d"> , </tspan><tspan id="loc_del" class="r">1,553,599--</tspan><tspan class="d"> )</tspan></text>
-    <text x="936" y="464" text-anchor="end" class="xs">English · astrophysics, exoplanets · robotics</text>
-    <text x="24" y="484" class="xs">Python, C, C++, Java · HTML, CSS, JSON, Markdown · linkedin.com/in/arnav-singh7 · arnavsingh0.github.io</text>
+    <rect x="0" y="414" width="960" height="76" fill="#0b0d11"/>
+    <rect x="0" y="414" width="960" height="1" fill="#dce6ee" opacity="0.14"/>
+    <text x="36" y="438" class="k">sol</text>
+    <text x="36" y="456" class="num" id="sol_data">1,992</text>
+    <text x="200" y="438" class="k">repos</text>
+    <text x="200" y="456" class="num" id="repo_data">12</text>
+    <text x="390" y="438" class="k">commits</text>
+    <text x="390" y="456" class="num" id="commit_data">149</text>
+    <text x="590" y="438" class="k">followers</text>
+    <text x="590" y="456" class="num" id="follower_data">7</text>
+    <text x="790" y="438" class="k">lines</text>
+    <text x="790" y="456" class="num" id="loc_data">3,663,063</text>
+    <text x="36" y="478" class="w"><tspan class="who">arnav@perseverance</tspan></text>
+    <text x="400" y="478" text-anchor="middle" class="sub">contributed <tspan id="contributed_data">23</tspan> · stars <tspan id="star_data">0</tspan> · <tspan id="loc_add">5,216,662++</tspan> · <tspan id="loc_del">1,553,599--</tspan></text>
+    <text x="924" y="478" text-anchor="end" class="w">in/arnav-singh7 · arnavsingh0.github.io</text>
   </g>
 </svg>
