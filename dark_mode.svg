@@ -9,10 +9,15 @@
       <stop offset="100%" stop-color="#102838"/>
     </linearGradient>
     <linearGradient id="mars-sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#110806"/>
-      <stop offset="62%" stop-color="#24110c"/>
-      <stop offset="100%" stop-color="#34180f"/>
+      <stop offset="0%" stop-color="#100704"/>
+      <stop offset="55%" stop-color="#22110c"/>
+      <stop offset="100%" stop-color="#3a1c10"/>
     </linearGradient>
+    <radialGradient id="regolith" cx="800" cy="430" r="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#d47842" stop-opacity="0.34"/>
+      <stop offset="48%" stop-color="#7a3818" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#6a3016" stop-opacity="0"/>
+    </radialGradient>
     <radialGradient id="earth-glow" cx="240" cy="166" r="150" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#1a6e90" stop-opacity="0.16"/>
       <stop offset="55%" stop-color="#0c3a50" stop-opacity="0.04"/>
@@ -23,12 +28,13 @@
       <stop offset="48%" stop-color="#e7eef2"/>
       <stop offset="100%" stop-color="#e2b48a"/>
     </linearGradient>
-    <linearGradient id="mars-fade-grad" gradientUnits="userSpaceOnUse" x1="390" y1="0" x2="545" y2="0">
+    <linearGradient id="mars-fade-grad" gradientUnits="userSpaceOnUse" x1="360" y1="0" x2="560" y2="0">
       <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0.10"/>
       <stop offset="100%" stop-color="#ffffff" stop-opacity="1"/>
     </linearGradient>
-    <mask id="mars-fade" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="960" height="414">
-      <rect x="390" y="0" width="570" height="414" fill="url(#mars-fade-grad)"/>
+    <mask id="mars-fade" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="960" height="440">
+      <rect x="360" y="0" width="600" height="440" fill="url(#mars-fade-grad)"/>
     </mask>
     <clipPath id="clip-card">
       <rect width="960" height="490" rx="10" ry="10"/>
@@ -55,14 +61,14 @@
     .eg { fill: #8b949e; }
     .en { fill: #6e7681; }
     .es { fill: #c9d1d9; }
-    .tag-e { font-family: "Courier New", Courier, monospace; font-size: 11px; fill: #6ea8b6; letter-spacing: 0.28em; }
-    .tag-m { font-family: "Courier New", Courier, monospace; font-size: 11px; fill: #c48b62; letter-spacing: 0.28em; }
-    .hint { font-family: "Courier New", Courier, monospace; font-size: 9px; fill: #8fa0ab; }
-    .k { font-family: "Courier New", Courier, monospace; font-size: 9px; fill: #66707c; letter-spacing: 0.14em; }
-    .num { font-family: "Courier New", Courier, monospace; font-size: 13px; fill: #dce6ee; }
-    .w { font-family: "Courier New", Courier, monospace; font-size: 10px; fill: #66707c; }
-    .sub { font-family: "Courier New", Courier, monospace; font-size: 9px; fill: #5c6670; }
-    .who { fill: #8b97a3; }
+    .tag-e { font-family: "Courier New", Courier, monospace; font-size: 10px; fill: #7eafb8; letter-spacing: 0.22em; }
+    .tag-m { font-family: "Courier New", Courier, monospace; font-size: 10px; fill: #c4926a; letter-spacing: 0.22em; }
+    .hint { font-family: "Courier New", Courier, monospace; font-size: 9px; fill: #8b98a2; letter-spacing: 0.06em; }
+    .k { font-family: "Courier New", Courier, monospace; font-size: 9px; fill: #7b868f; letter-spacing: 0.08em; }
+    .num { font-family: "Courier New", Courier, monospace; font-size: 15px; fill: #e7eef3; }
+    .w { font-family: "Courier New", Courier, monospace; font-size: 9px; fill: #7b868f; }
+    .sub { font-family: "Courier New", Courier, monospace; font-size: 9px; fill: #7b868f; }
+    .who { fill: #9aa6b0; }
     .mars .rv { fill: #e7c4a6; }
     .mars .es { fill: #f3ddc8; }
     .mars .en { fill: #c9956e; }
@@ -71,7 +77,7 @@
     .mars .r  { fill: #e8886a; }
   </style>
   <g clip-path="url(#clip-card)">
-    <rect x="0" y="0" width="960" height="414" fill="url(#earth-sky)"/>
+    <rect x="0" y="0" width="960" height="440" fill="url(#earth-sky)"/>
     <circle cx="240" cy="166" r="140" fill="url(#earth-glow)"/>
     <circle cx="36" cy="78" r="0.8" fill="#d5e6f0" opacity="0.35"/>
     <circle cx="92" cy="46" r="0.5" fill="#c5d8e4" opacity="0.22"/>
@@ -81,19 +87,18 @@
     <circle cx="360" cy="52" r="0.5" fill="#c5d8e4" opacity="0.18"/>
     <text x="32" y="36" class="tag-e">earth</text>
     <g mask="url(#mars-fade)">
-      <rect x="0" y="0" width="960" height="414" fill="url(#mars-sky)"/>
-      <circle cx="900" cy="70" r="16" fill="#e8b07a" opacity="0.05"/>
-      <circle cx="900" cy="70" r="5.5" fill="#e8b07a" opacity="0.32"/>
-      <circle cx="700" cy="48" r="0.45" fill="#e7cbb4" opacity="0.16"/>
-      <circle cx="820" cy="36" r="0.5" fill="#e7cbb4" opacity="0.12"/>
-      <circle cx="940" cy="96" r="0.4" fill="#e7cbb4" opacity="0.14"/>
-      <path d="M520 414 C 640 410, 720 386, 840 396 C 910 402, 940 388, 960 392 L 960 414 Z" fill="#5c301c" opacity="0.5"/>
-      <text x="928" y="36" text-anchor="end" class="tag-m">mars</text>
+      <rect x="0" y="0" width="960" height="440" fill="url(#mars-sky)"/>
+      <circle cx="868" cy="78" r="36" fill="#e8b07a" opacity="0.035"/>
+      <circle cx="868" cy="78" r="3.2" fill="#f0c49a" opacity="0.55"/>
+      <circle cx="760" cy="42" r="0.45" fill="#e7cbb4" opacity="0.18"/>
+      <circle cx="930" cy="120" r="0.4" fill="#e7cbb4" opacity="0.14"/>
+      <rect x="500" y="280" width="460" height="160" fill="url(#regolith)"/>
+      <text x="928" y="34" text-anchor="end" class="tag-m">mars</text>
     </g>
 
 <g id="earth" transform="translate(46,70)">
-        <circle cx="193.6" cy="95.5" r="83.0" fill="none" stroke="#58a6ff" stroke-width="0.7" opacity="0.22"/>
-        <circle cx="193.6" cy="95.5" r="85.6" fill="none" stroke="#8b949e" stroke-width="0.6" stroke-dasharray="1.5 4.5" opacity="0.28">
+        <circle cx="193.6" cy="95.5" r="83.0" fill="none" stroke="#7ec8e0" stroke-width="0.6" opacity="0.16"/>
+        <circle cx="193.6" cy="95.5" r="85.6" fill="none" stroke="#9fb4c4" stroke-width="0.55" stroke-dasharray="1.2 5" opacity="0.22">
           <animate attributeName="stroke-dashoffset" from="0" to="-36" dur="12s" repeatCount="indefinite"/>
         </circle>
         <g opacity="1">
@@ -467,17 +472,16 @@
       </g>
 
 
-    <text x="490" y="76" text-anchor="middle" class="hint">1.5 au · 12.5 min</text>
+    <text x="500" y="62" text-anchor="middle" class="hint">1.5 au · 12.5 min</text>
     <g id="dsn-link">
-      <path d="M 308.4 211.9 C 420.0 80.0, 620.0 70.0, 720.0 161.0" fill="none" stroke="url(#dsn-grad)" stroke-width="5" stroke-linecap="round" opacity="0.10"/>
-      <path d="M 308.4 211.9 C 420.0 80.0, 620.0 70.0, 720.0 161.0" fill="none" stroke="url(#dsn-grad)" stroke-width="1.15" stroke-linecap="round" opacity="0.72"/>
-      <path d="M 308.4 211.9 C 420.0 80.0, 620.0 70.0, 720.0 161.0" fill="none" stroke="#e7eef2" stroke-width="1.15" stroke-linecap="round" stroke-dasharray="2 18" opacity="0.45">
-        <animate attributeName="stroke-dashoffset" from="0" to="-80" dur="6s" repeatCount="indefinite"/>
+      <path d="M 308.4 211.9 C 420.0 80.0, 620.0 70.0, 720.0 161.0" fill="none" stroke="url(#dsn-grad)" stroke-width="1.15" stroke-linecap="round" opacity="0.8"/>
+      <path d="M 308.4 211.9 C 420.0 80.0, 620.0 70.0, 720.0 161.0" fill="none" stroke="#f4f7f8" stroke-width="1.15" stroke-linecap="round" stroke-dasharray="1.5 16" opacity="0.28">
+        <animate attributeName="stroke-dashoffset" from="0" to="-70" dur="6s" repeatCount="indefinite"/>
       </path>
-      <circle cx="308.4" cy="211.9" r="1.6" fill="#9fd4e2" opacity="0.7">
-        <animate attributeName="opacity" values="0.35;0.75;0.35" dur="6s" repeatCount="indefinite"/>
+      <circle cx="308.4" cy="211.9" r="1.5" fill="#b7e0ea" opacity="0.75">
+        <animate attributeName="opacity" values="0.35;0.8;0.35" dur="6s" repeatCount="indefinite"/>
       </circle>
-      <circle r="2.7" fill="#f4f7f8" cx="308.4" cy="211.9" opacity="0">
+      <circle r="2.35" fill="#f7fbfc" cx="308.4" cy="211.9" opacity="0">
         <animate attributeName="cx" dur="12s" repeatCount="indefinite" values="308.4;330.3;354.0;379.3;405.7;433.2;461.3;489.9;518.5;547.1;575.2;602.7;629.2;654.4;678.2;700.1;720.0"/>
         <animate attributeName="cy" dur="12s" repeatCount="indefinite" values="211.9;188.6;168.1;150.4;135.5;123.3;113.8;107.0;102.9;101.3;102.3;105.9;112.0;120.6;131.7;145.1;161.0"/>
         <animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0.95;0.95;0" keyTimes="0;0.04;0.94;1"/>
@@ -620,20 +624,24 @@
     <circle cx="720" cy="158" r="1.7" fill="#f0dcc4" opacity="0.75">
       <animate attributeName="opacity" values="0.4;0.8;0.4" dur="6s" repeatCount="indefinite"/>
     </circle>
-    <rect x="0" y="414" width="960" height="76" fill="#0b0d11"/>
-    <rect x="0" y="414" width="960" height="1" fill="#dce6ee" opacity="0.14"/>
-    <text x="36" y="438" class="k">sol</text>
-    <text x="36" y="456" class="num" id="sol_data">1,992</text>
-    <text x="200" y="438" class="k">repos</text>
-    <text x="200" y="456" class="num" id="repo_data">12</text>
-    <text x="390" y="438" class="k">commits</text>
-    <text x="390" y="456" class="num" id="commit_data">149</text>
-    <text x="590" y="438" class="k">followers</text>
-    <text x="590" y="456" class="num" id="follower_data">7</text>
-    <text x="790" y="438" class="k">lines</text>
-    <text x="790" y="456" class="num" id="loc_data">3,663,063</text>
-    <text x="36" y="478" class="w"><tspan class="who">arnav@perseverance</tspan></text>
-    <text x="400" y="478" text-anchor="middle" class="sub">contributed <tspan id="contributed_data">23</tspan> · stars <tspan id="star_data">0</tspan> · <tspan id="loc_add">5,216,662++</tspan> · <tspan id="loc_del">1,553,599--</tspan></text>
-    <text x="924" y="478" text-anchor="end" class="w">in/arnav-singh7 · arnavsingh0.github.io</text>
+    <linearGradient id="floor" x1="0" y1="404" x2="0" y2="434" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0b0d11" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0b0d11" stop-opacity="1"/>
+    </linearGradient>
+    <rect x="0" y="404" width="960" height="30" fill="url(#floor)"/>
+    <rect x="0" y="434" width="960" height="56" fill="#0b0d11"/>
+    <text x="36" y="446" class="k">sol</text>
+    <text x="36" y="466" class="num" id="sol_data">1,992</text>
+    <text x="210" y="446" class="k">repos</text>
+    <text x="210" y="466" class="num" id="repo_data">12</text>
+    <text x="400" y="446" class="k">commits</text>
+    <text x="400" y="466" class="num" id="commit_data">149</text>
+    <text x="590" y="446" class="k">followers</text>
+    <text x="590" y="466" class="num" id="follower_data">7</text>
+    <text x="790" y="446" class="k">lines</text>
+    <text x="790" y="466" class="num" id="loc_data">3,663,063</text>
+    <text x="36" y="484" class="w"><tspan class="who">arnav@perseverance</tspan><tspan>  ·  arnavsingh0.github.io</tspan></text>
+    <text x="470" y="484" text-anchor="middle" class="sub">contrib <tspan id="contributed_data">23</tspan>  ·  stars <tspan id="star_data">0</tspan></text>
+    <text x="900" y="484" text-anchor="end" class="sub"><tspan id="loc_add">5,216,662++</tspan>  ·  <tspan id="loc_del">1,553,599--</tspan></text>
   </g>
 </svg>
