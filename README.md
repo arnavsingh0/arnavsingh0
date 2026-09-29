@@ -3,7 +3,7 @@
 physics & cs @ dartmouth.
 
 <!--STARTS_HERE_QUOTE_README-->
-<i>❝“UNIX is simple.  It just takes a genius to understand its simplicity.”— Dennis Ritchie   ❞</i>
+<i>❝“Programming can be fun, so can cryptography; however they should not be combined.”— Kreitzberg and Shneiderman  ❞</i>
 <!--ENDS_HERE_QUOTE_README-->
 
 <p align="center">
