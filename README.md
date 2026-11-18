@@ -3,7 +3,7 @@
 physics & cs @ dartmouth.
 
 <!--STARTS_HERE_QUOTE_README-->
-<i>❝“Tell me and I forget.  Teach me and I remember.  Involve me and I learn.”— Benjamin Franklin   ❞</i>
+<i>❝“Maybe stories are just data with a soul.”— Brené Brown❞</i>
 <!--ENDS_HERE_QUOTE_README-->
 
 <p align="center">
